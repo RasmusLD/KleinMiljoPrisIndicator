@@ -107,7 +107,7 @@ $(document).ready(function(){
 			var windowHeight = $(window).height();
 			windowHeight = windowHeight + "px"
 			$(body).append('<p>before setting style.height = windownHeight</p>');
-			$(body).style.height = windowHeight;
+			$(body).style.height = "100%";
 			$(body).append('<p>before defining border as solid</p>');
 			$(body).style.border = "solid";
 			
