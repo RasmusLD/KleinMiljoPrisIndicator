@@ -100,12 +100,17 @@ $(document).ready(function(){
 		//done to clean the "body"
 		$(body).empty();
 		
-		var windowHeight = $(window).height() + px;
-		$(body).style.height = windowHeight;
-		$(body).style.border = "solid";
-		
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
+			//giving the window a solid green border, that fills the viewport
+			$(body).append('<p>before defining windownHeight</p>');
+			var windowHeight = $(window).height() + px;
+			$(body).append('<p>before setting style.height = windownHeight</p>');
+			$(body).style.height = windowHeight;
+			$(body).append('<p>before defining border as solid</p>');
+			$(body).style.border = "solid";
+			
+			
 			//the var we append to body later on in this method
 			var toAppend = '<form id="userProfileForm" class="form-group" role="form" method="post" action="">';
 			
@@ -133,7 +138,7 @@ $(document).ready(function(){
 			//appends the data from this method
 			$(body).append(toAppend);
 			
-		}, 10);
+		}, 1);
 		
 	};
 	
