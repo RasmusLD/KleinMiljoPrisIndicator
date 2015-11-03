@@ -100,9 +100,9 @@ $(document).ready(function(){
 		//done to clean the "body"
 		$(body).empty();
 		
-		//var windowHeight = $(window).height() + px;
-		//$(body).style.height = windowHeight;
-		//$(body).style.border = "solid";
+		var windowHeight = $(window).height() + px;
+		$(body).style.height = windowHeight;
+		$(body).style.border = "solid";
 		
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
@@ -139,9 +139,8 @@ $(document).ready(function(){
 	
 	function showLogo() {
 		//inserts the "Klein-Miljø" logo in top of all pages.
-        $("#lCont").append('<img src="img/LogoKlein.png" class="img-responsive" style="margin-top:'+ relativeSize('1vh', 1) +'; width:'+ relativeSize('32vmin', 32) +';" alt="Klein-Miljø" >');
-		
-		//add text next to the logo <p>Klein-Miljø Pris Indicator</p>
+        $("#lCont").append('<img src="img/LogoKlein.png" class="img-responsive pull-left" style="margin-top:'+ relativeSize('1vh', 1) +'; width:'+ relativeSize('20vmin', 20) +';" alt="Klein-Miljø" >\
+		<p class="pull-left" style="margin-top:'+ relativeSize('1vh', 1) +'" >Klein-Miljø Pris Indicator</p>');
 	};
 	
 	//used above to know if we need to handle a backBtn, but also to determine how to style certain elements... this is done because certain older windows and apple phone will have trouble with styling compatability...
