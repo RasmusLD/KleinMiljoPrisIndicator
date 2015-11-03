@@ -105,8 +105,9 @@ $(document).ready(function(){
 			//giving the window a solid green border, that fills the viewport
 			$(body).append('<p>before defining windownHeight</p>');
 			var windowHeight = $(window).height();
+			windowHeight = windowHeight + "px"
 			$(body).append('<p>before setting style.height = windownHeight</p>');
-			$(body).style.height = ""+ windowHeight +"px";
+			$(body).style.height = windowHeight;
 			$(body).append('<p>before defining border as solid</p>');
 			$(body).style.border = "solid";
 			
@@ -145,7 +146,7 @@ $(document).ready(function(){
 	function showLogo() {
 		//inserts the "Klein-Miljø" logo in top of all pages.
         $("#lCont").append('<img src="img/LogoKlein.png" class="img-responsive pull-left" style="margin-top:'+ relativeSize('1vh', 1) +'; width:'+ relativeSize('20vmin', 20) +';" alt="Klein-Miljø" >\
-		<p class="pull-left" style="margin-left: 15px; margin-top: 15px;" >Klein-Miljø Pris Indicator</p>');
+		<p class="pull-left" style="margin-left: 25px; margin-top: 15px;" >Klein-Miljø Pris Indicator</p>');
 	};
 	
 	//used above to know if we need to handle a backBtn, but also to determine how to style certain elements... this is done because certain older windows and apple phone will have trouble with styling compatability...
