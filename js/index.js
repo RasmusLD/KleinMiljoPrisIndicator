@@ -109,7 +109,7 @@ $(document).ready(function(){
 			//the var we append to body later on in this method
 			var toAppend = '<form id="userProfileForm" class="form-group" role="form" method="post" action="">';
 			
-			toAppend +='<form action="">\
+			toAppend +='\
 				<select name="cars">\
 					<option value="indendørs maling">indendørs maling</option>\
 					<option value="udendørs maling">udendørs maling</option>\
