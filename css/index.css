@@ -21,7 +21,7 @@
 }
 
 #bCont {
-	border-style: solid;
-	border-bottom-width: 7px;
+	border-style: none;
+	border-bottom-width: 8px;
 	border-color: rgb(146,208,80);
 }
