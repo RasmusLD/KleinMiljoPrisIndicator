@@ -102,8 +102,18 @@ $(document).ready(function(){
 		
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
+			//the var we append to body later on in this method
+			var toAppend = '<form id="userProfileForm" class="form-group" role="form" method="post" action="">';
 			
-			//$(body).
+			
+			
+			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
+			toAppend += '<button type="submit" class="btn btn-success btn-lg" id="saveUserProfileBtn">Gem ændringer</button>';
+			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be
+			toAppend += '</form>';
+			
+			//appends the data from this method
+			$(body).append(toAppend);
 			
 		}, 10);
 		
@@ -112,6 +122,7 @@ $(document).ready(function(){
 	function showLogo() {
 		//inserts the "Klein-Miljø" logo in top of all pages.
         $("#lCont").append('<img src="img/LogoKlein.png" class="img-responsive" style="margin-top:'+ relativeSize('1vh', 1) +'; width:'+ relativeSize('32vmin', 32) +';" alt="Klein-Miljø" >');
+		
 		//add text next to the logo <p>Klein-Miljø Pris Indicator</p>
 	};
 	
