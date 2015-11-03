@@ -24,6 +24,11 @@
 body {
 	height: 100vh;
 	border-style: solid;
-	border-bottom-width: 8px;
+	border-width: 5px;
 	border-color: rgb(146,208,80);
 }
+
+#lCont {
+	margin-bottom:15px;
+}
+
