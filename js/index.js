@@ -102,15 +102,6 @@ $(document).ready(function(){
 		
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
-			//giving the window a solid green border, that fills the viewport
-			$(body).append('<p>before defining windownHeight</p>');
-			var windowHeight = $(window).height();
-			windowHeight = windowHeight + "px"
-			$(body).append('<p>before setting style.height = windownHeight</p>');
-			//$(body).style.height = "100%";
-			$(body).append('<p>before defining border as solid</p>');
-			//$(body).style.border = "solid";
-			
 			
 			//the var we append to body later on in this method
 			var toAppend = '<form id="userProfileForm" class="form-group" role="form" method="post" action="">';
