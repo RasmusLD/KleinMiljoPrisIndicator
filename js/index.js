@@ -103,7 +103,7 @@ $(document).ready(function(){
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
 			
-			$(body).
+			//$(body).
 			
 		}, 10);
 		
@@ -112,7 +112,7 @@ $(document).ready(function(){
 	function showLogo() {
 		//inserts the "Klein-Miljø" logo in top of all pages.
         $("#lCont").append('<img src="img/LogoKlein.png" class="img-responsive" style="margin-top:'+ relativeSize('1vh', 1) +'; width:'+ relativeSize('32vmin', 32) +';" alt="Klein-Miljø" >');
-		<p>Klein-Miljø Pris Indicator</p>
+		//add text next to the logo <p>Klein-Miljø Pris Indicator</p>
 	};
 	
 	//used above to know if we need to handle a backBtn, but also to determine how to style certain elements... this is done because certain older windows and apple phone will have trouble with styling compatability...
