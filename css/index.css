@@ -23,7 +23,7 @@
 
 #bCont {
 	height: 100%;
-	border-style: none;
+	border-style: solid;
 	border-bottom-width: 8px;
 	border-color: rgb(146,208,80);
 }

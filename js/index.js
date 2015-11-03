@@ -109,7 +109,7 @@ $(document).ready(function(){
 			$(body).append('<p>before setting style.height = windownHeight</p>');
 			//$(body).style.height = "100%";
 			$(body).append('<p>before defining border as solid</p>');
-			$(body).style.border = "solid";
+			//$(body).style.border = "solid";
 			
 			
 			//the var we append to body later on in this method
