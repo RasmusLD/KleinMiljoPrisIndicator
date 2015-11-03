@@ -100,33 +100,33 @@ $(document).ready(function(){
 		//done to clean the "body"
 		$(body).empty();
 		
-		var windowHeight = $(window).height() + px;
-		$(body).style.height = windowHeight;
-		$(body).style.border = "solid";
+		//var windowHeight = $(window).height() + px;
+		//$(body).style.height = windowHeight;
+		//$(body).style.border = "solid";
 		
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
 			//the var we append to body later on in this method
 			var toAppend = '<form id="userProfileForm" class="form-group" role="form" method="post" action="">';
 			
-			<form action="">
-				<select name="cars">
-					<option value="indendørs maling">indendørs maling</option>
-					<option value="udendørs maling">udendørs maling</option>
-					<option value="jord">jord</option>
-					<option value="grus">grus</option>
-				</select>
-				
-				<select name="cars">
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-				</select>
-			</form>
+			toAppend +='<form action="">\
+				<select name="cars">\
+					<option value="indendørs maling">indendørs maling</option>\
+					<option value="udendørs maling">udendørs maling</option>\
+					<option value="jord">jord</option>\
+					<option value="grus">grus</option>\
+				</select>\
+				\
+				<select name="cars">\
+					<option value="1">1</option>\
+					<option value="2">2</option>\
+					<option value="3">3</option>\
+					<option value="4">4</option>\
+				</select>\
+			</form>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
-			toAppend += '<button type="submit" class="btn btn-success btn-lg" id="saveUserProfileBtn">Gem ændringer</button>';
+			toAppend += '<button type="submit" class="btn btn-success btn-lg" id="lavUdregning">Lav udregning</button>';
 			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be
 			toAppend += '</form>';
 			
