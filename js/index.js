@@ -124,7 +124,7 @@ $(document).ready(function(){
 				</select>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
-			toAppend += '<button type="submit" class="btn btn-success btn-lg" id="lavUdregning" action="">Lav udregning</button>';
+			toAppend += '<button type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" id="lavUdregning" action="">Lav udregning</button>';
 			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be //showHandleResult
 			toAppend += '</form>';
 			
@@ -133,6 +133,24 @@ $(document).ready(function(){
 			
 		}, 1);
 	};
+	
+	//will be used to show the options for what to do with the result, send an email, etc...
+	function showHandleResult() {
+		//done to clean the "body"
+		$(body).empty();
+		
+		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
+		setTimeout(function() {
+			
+			$(body).append('<form action="">\
+				<input type="radio" name="kontakt" value="tagPrøven">Jeg ønsker at bestille prøvetagningen<br>\
+				<input type="radio" name="kontakt" value="givTilbud">Jeg ønsker at modtage et skriftligt tilbud<br>\
+				<input type="radio" name="kontakt" value="ringMig">Jeg ønskerat modtage en oprigning af en konsulent<br>\
+			</form>');
+			
+		}, 1);
+	};
+	
 	
 	function showLogo() {
 		//inserts the "Klein-Miljø" logo in top of all pages.
