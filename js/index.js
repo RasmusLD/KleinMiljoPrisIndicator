@@ -85,8 +85,6 @@ $(document).ready(function(){
 		//instantiates var body, that will be used on every page.
 		body = $("#bCont");
 		
-		$(body).append("<p>test, før showMiljoIndicatorChoice</p>");
-		
 		//starts up the app's functionality
 		showMiljoIndicatorChoice();
 	});
@@ -110,11 +108,10 @@ $(document).ready(function(){
 			
 			//the var we append to body later on in this method
 			var toAppend = '<form id="userProfileForm" class="form-group" role="form" method="post" action="">';
-			//<option selected disabled hidden value="disabled">Vælg fra menuen</option>
-			//<option selected disabled hidden value="disabled">Vælg antal</option>
+			
 			toAppend +='\
 				<select name="proveType">\
-					\
+					<option selected disabled hidden value="disabled">Vælg fra menuen</option>\
 					<option value="indendørs maling">indendørs maling</option>\
 					<option value="udendørs maling">udendørs maling</option>\
 					<option value="jord">jord</option>\
@@ -122,7 +119,7 @@ $(document).ready(function(){
 				</select>\
 				\
 				<select name="antalProver">\
-					\
+					<option selected disabled hidden value="disabled">Vælg antal</option>\
 					<option value="1">1</option>\
 					<option value="2">2</option>\
 					<option value="3">3</option>\
@@ -141,30 +138,7 @@ $(document).ready(function(){
 		
 	};
 	
-	//calc result
-	function calcResult() {
-		var result;
-		result = 5000;
-		$(body).append("<h3>Pris i kr: "+ result +"</h3>");
-	};
 	
-	//will be used to show the options for what to do with the result, send an email, etc...
-	function showHandleResult() {
-		//done to clean the "body"
-		$(body).empty();
-		
-		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
-		setTimeout(function() {
-			calcResult();
-			
-			$(body).append('<form action="">\
-				<input type="radio" name="kontakt" value="tagPrøven">Jeg ønsker at bestille prøvetagningen<br>\
-				<input type="radio" name="kontakt" value="givTilbud">Jeg ønsker at modtage et skriftligt tilbud<br>\
-				<input type="radio" name="kontakt" value="ringMig">Jeg ønskerat modtage en oprigning af en konsulent<br>\
-			</form>');
-			
-		}, 1);
-	};
 	
 	function showLogo() {
 		//inserts the "Klein-Miljø" logo in top of all pages.
