@@ -85,8 +85,10 @@ $(document).ready(function(){
 		//instantiates var body, that will be used on every page.
 		body = $("#bCont");
 		
+		$(body).append("<p>test, før showMiljoIndicatorChoice</p>");
+		
 		//starts up the app's functionality
-		showMiljøIndicatorChoice();
+		showMiljoIndicatorChoice();
 	});
 	
 	//closes the app on pause, is used to circumvent our state problem
@@ -99,7 +101,7 @@ $(document).ready(function(){
 	var selectorValue1:
 	var selectorValue2;
 	//starts up the indicator, populating it with the starting elements
-	function showMiljøIndicatorChoice() {
+	function showMiljoIndicatorChoice() {
 		//done to clean the "body"
 		$(body).empty();
 		
@@ -125,8 +127,7 @@ $(document).ready(function(){
 					<option value="2">2</option>\
 					<option value="3">3</option>\
 					<option value="4">4</option>\
-				</select>\
-			</form>';
+				</select>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
 			toAppend += '<button type="submit" class="btn btn-success btn-lg" id="lavUdregning" action="showHandleResult">Lav udregning</button>';
