@@ -124,19 +124,19 @@ $(document).ready(function(){
 				</select>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
-			toAppend += '<button type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" id="lavUdregning" action="showHandleResult">Lav udregning</button>';
+			toAppend += '<button type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" id="lavUdregning" action="">Lav udregning</button>';
 			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be //showHandleResult
 			toAppend += '</form>';
 			
 			//appends the data from this method
 			$(body).append(toAppend);
 			
-			setTimeout(function() {
-				$("#lavUdregning").on("click", function(event) {
-					event.preventDefault();
-					showHandleResult();
-				};
-			}, 1);
+			//setTimeout(function() {
+				//$("#lavUdregning").on("click", function(event) {
+					//event.preventDefault();
+					//showHandleResult();
+				//};
+			//}, 1);
 			
 		}, 1);
 	};
