@@ -86,7 +86,11 @@ $(document).ready(function(){
 		body = $("#bCont");
 		
 		//starts up the app's functionality
+<<<<<<< HEAD
 		showMiljoIndicatorChoice();
+=======
+		initializeMiljøIndicator();
+>>>>>>> parent of 47d4e84... name changes
 	});
 	
 	//closes the app on pause, is used to circumvent our state problem
@@ -99,7 +103,11 @@ $(document).ready(function(){
 	var selectorValue1:
 	var selectorValue2;
 	//starts up the indicator, populating it with the starting elements
+<<<<<<< HEAD
 	function showMiljoIndicatorChoice() {
+=======
+	function initializeMiljøIndicator() {
+>>>>>>> parent of 47d4e84... name changes
 		//done to clean the "body"
 		$(body).empty();
 		
@@ -138,12 +146,15 @@ $(document).ready(function(){
 		
 	};
 	
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> parent of 47d4e84... name changes
 	function showLogo() {
 		//inserts the "Klein-Miljø" logo in top of all pages.
         $("#lCont").append('<img src="img/LogoKlein.png" class="img-responsive pull-left" style="margin-top:'+ relativeSize('1vh', 1) +'; width:'+ relativeSize('20vmin', 20) +';" alt="Klein-Miljø" >\
-		<p class="pull-left" style="margin-left: 25px; margin-top: 25px;" >Klein-Miljø Pris Indicator</p>');
+		<p class="pull-left" style="margin-left: 25px; margin-top: 20px;" >Klein-Miljø Pris Indicator</p>');
 	};
 	
 	//used above to know if we need to handle a backBtn, but also to determine how to style certain elements... this is done because certain older windows and apple phone will have trouble with styling compatability...
