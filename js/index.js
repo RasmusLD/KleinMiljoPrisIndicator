@@ -128,7 +128,7 @@ $(document).ready(function(){
 			</form>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
-			toAppend += '<button type="submit" class="btn btn-success btn-lg" id="lavUdregning" action="showHandleResult">Lav udregning</button>';
+			toAppend += '<button type="submit" class="btn btn-success btn-lg" id="lavUdregning" action="">Lav udregning</button>';
 			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be
 			toAppend += '</form>';
 			
