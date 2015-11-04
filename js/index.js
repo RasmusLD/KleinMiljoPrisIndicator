@@ -131,6 +131,13 @@ $(document).ready(function(){
 			//appends the data from this method
 			$(body).append(toAppend);
 			
+			setTimeout(function() {
+				$("#lavUdregning").on("click", function(event) {
+					event.preventDefault();
+					showHandleResult();
+				};
+			}, 1);
+			
 		}, 1);
 	};
 	
