@@ -108,18 +108,19 @@ $(document).ready(function(){
 			
 			//the var we append to body later on in this method
 			var toAppend = '<form id="userProfileForm" class="form-group" role="form" method="post" action="">';
-			
+			//<option selected disabled hidden value="disabled">Vælg fra menuen</option>
+			//<option selected disabled hidden value="disabled">Vælg antal</option>
 			toAppend +='\
-				<select name="prøveType">\
-					<option selected disabled hidden value="disabled">Vælg fra menuen</option>\
+				<select name="proveType">\
+					\
 					<option value="indendørs maling">indendørs maling</option>\
 					<option value="udendørs maling">udendørs maling</option>\
 					<option value="jord">jord</option>\
 					<option value="grus">grus</option>\
 				</select>\
 				\
-				<select name="antalPrøver">\
-					<option selected disabled hidden value="disabled">Vælg antal</option>\
+				<select name="antalProver">\
+					\
 					<option value="1">1</option>\
 					<option value="2">2</option>\
 					<option value="3">3</option>\
@@ -128,7 +129,7 @@ $(document).ready(function(){
 			</form>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
-			toAppend += '<button type="submit" class="btn btn-success btn-lg" id="lavUdregning" action="">Lav udregning</button>';
+			toAppend += '<button type="submit" class="btn btn-success btn-lg" id="lavUdregning" action="showHandleResult">Lav udregning</button>';
 			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be
 			toAppend += '</form>';
 			
