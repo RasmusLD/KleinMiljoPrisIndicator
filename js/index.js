@@ -95,6 +95,9 @@ $(document).ready(function(){
         navigator.app.exitApp();
     };
 	
+	//not sure if these will be needed, but the idea is to save the value of the selectors outside the scope of the function
+	var selectorValue1:
+	var selectorValue2;
 	//starts up the indicator, populating it with the starting elements
 	function showMiljøIndicatorChoice() {
 		//done to clean the "body"
@@ -107,14 +110,16 @@ $(document).ready(function(){
 			var toAppend = '<form id="userProfileForm" class="form-group" role="form" method="post" action="">';
 			
 			toAppend +='\
-				<select name="cars">\
+				<select name="prøveType">\
+					<option selected disabled hidden value="disabled">Vælg fra menuen</option>\
 					<option value="indendørs maling">indendørs maling</option>\
 					<option value="udendørs maling">udendørs maling</option>\
 					<option value="jord">jord</option>\
 					<option value="grus">grus</option>\
 				</select>\
 				\
-				<select name="cars">\
+				<select name="antalPrøver">\
+					<option selected disabled hidden value="disabled">Vælg antal</option>\
 					<option value="1">1</option>\
 					<option value="2">2</option>\
 					<option value="3">3</option>\
@@ -123,7 +128,7 @@ $(document).ready(function(){
 			</form>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
-			toAppend += '<button type="submit" class="btn btn-success btn-lg" id="lavUdregning">Lav udregning</button>';
+			toAppend += '<button type="submit" class="btn btn-success btn-lg" id="lavUdregning" action="showHandleResult">Lav udregning</button>';
 			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be
 			toAppend += '</form>';
 			
@@ -134,6 +139,13 @@ $(document).ready(function(){
 		
 	};
 	
+	//calc result
+	function calcResult() {
+		var result;
+		result = 5000;
+		$(body).append("<h3>Pris i kr: "+ result +"</h3>");
+	};
+	
 	//will be used to show the options for what to do with the result, send an email, etc...
 	function showHandleResult() {
 		//done to clean the "body"
@@ -141,6 +153,13 @@ $(document).ready(function(){
 		
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
+			calcResult();
+			
+			$(body).append('<form action="">\
+				<input type="radio" name="kontakt" value="tagPrøven">Jeg ønsker at bestille prøvetagningen<br>\
+				<input type="radio" name="kontakt" value="givTilbud">Jeg ønsker at modtage et skriftligt tilbud<br>\
+				<input type="radio" name="kontakt" value="ringMig">Jeg ønskerat modtage en oprigning af en konsulent<br>\
+			</form>');
 			
 		}, 1);
 	};
