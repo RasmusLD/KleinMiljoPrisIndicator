@@ -241,6 +241,35 @@ $(document).ready(function(){
 		*/
     };
 	
+	//Bygninger > Materiale Prøver relaterede objekter/array
+	var bmpASB = {beskrivelse: "Asbest i materialeprøve -mikroskopi", pis: 460, info: "I forbindelse med renovering eller nybyggeri kan det være nødvendigt at undersøge materialer, luft eller jord for asbest. Asbest er en fælles betegnelse for en gruppe af fiberformede silikater.\n\
+\n\
+Asbest typebestemmes og kvantificeres at kvantificere asbest i jord efter metoden: PLM (polariseret lys mikroskopi) på asbestfibre >50 µm, omregning iht Miljøprojekt nr. 1360-2011.\n\
+Der kendes adskillige asbestmineraler, men specielt tre typer har fundet anvendelse:\n\
+\n\
+Hvid asbest (chrysotil)\n\
+Brun asbest (amosit)\n\
+Blå asbest (crocidolit)\n\
+Asbestos\n\
+I dag er asbest dokumenteret kræftfremkaldende. Og det er karakteristisk, at der ikke kan sættes en nedre grænse for den sundhedsfarlige koncentration. I Danmark menes asbest at have været anvendt i op mod 3.000 forskellige produkter, især i lofts- og vægbeklædninger, i gulvmaterialer og som isolations- og brandhæmmende materiale.\n\
+Har du brug for hjælp eller vejledning, kontakt en af vore konsulenter"};
+	var bmpBLY = {beskrivelse: "Bly i maling", pris: 172,5, info: "Bly er et metal, der afhængig af dets kemiske forbindelser, kan indebære forskellige miljø og sundhedsskadelige effekter for mennesker og miljø. Bly optages i kroppen gennem mund, næse, slimhinder og i mindre omfang gennem huden.\n\
+	Mange ældre malingstyper indeholder metaller herunder bly. Der findes en række regler der skal overholdes i forbindelse med renoveringsarbejder og nedrivning, både i forbindelse med arbejdsmiljø og bortskaffelse af bygningsmaterialer. Hvis du har brug for information eller vejledning, kontakt en af vore konsulenter."};
+	var bmp6MET = {beskrivelse: "6 metaller (Cd,Cu,Cr,Ni,Pb,Zn) i maling", pris: 201,25, info: "Maling kan indeholde en række tungmetaller der kan være sundhedsskadelige. Der findes en række grænseværdier der har indflydelse på arbejdsmiljø og bortskaffelse."};
+	var bmpFUG = {beskrivelse: "PCB i fugemasse", pis:460 , info: "PCB har været brugt i byggeriet i Danmark i bygninger, der er opført eller renoveret i perioden 1950 – 1977\n\
+Inden en bygning renoveres eller rives ned, skal det undersøges, om den indeholder PCB. Resultatet af undersøgelsen skal anmeldes til kommunen. Hvis bygningen indeholder PCB-holdige materialer, skal de fjernes fra bygningen, inden renovering eller nedrivning. Det PCB-holdige affald skal bortskaffes efter gældende regler, så PCB ikke spredes i miljøet.\n\
+PCB identificeres indledningsvis ud fra bygningens alder. Herudover ved visuel gennemgang af mulige kilder og ved faktiske måling af relevante byggematerialer og i indeluft. Selvom der er PCB i bygningen, er det ikke givet, at indholdet er forbundet med en øget helbredsrisiko\n\
+PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt affald, og aktionsværdier for, hvor stor koncentrationen må være i indeluften, før det er at betragte som en øget helbredsrisiko. Kontakt en af vore konsulenter for at drøfte din sag."};
+	var bmpMAL = {beskrivelse: "PCB i maling", pis: 460, info: "PCB har været brugt i byggeriet i Danmark i bygninger, der er opført eller renoveret i perioden 1950 – 1977\n\
+Inden en bygning renoveres eller rives ned, skal det undersøges, om den indeholder PCB. Resultatet af undersøgelsen skal anmeldes til kommunen. Hvis bygningen indeholder PCB-holdige materialer, skal de fjernes fra bygningen, inden renovering eller nedrivning. Det PCB-holdige affald skal bortskaffes efter gældende regler, så PCB ikke spredes i miljøet.\n\
+PCB identificeres indledningsvis ud fra bygningens alder. Herudover ved visuel gennemgang af mulige kilder og ved faktiske måling af relevante byggematerialer og i indeluft. Selvom der er PCB i bygningen, er det ikke givet, at indholdet er forbundet med en øget helbredsrisiko\n\
+PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt affald, og aktionsværdier for, hvor stor koncentrationen må være i indeluften, før det er at betragte som en øget helbredsrisiko. Kontakt en af vore konsulenter for at drøfte din sag."};
+	var bmpBET = {beskrivelse: "PCB i knust beton", pis: 402,5, info: "Hvis der er benyttet PCB holdig maling på beton, er der flere muligheder, enten at sandblæse malingen af eller at deponere betonen med det PCB holdige maling. Den mest økonomiske løsning afhænger af forholdet mellem PCB og beton. Der udtages en prøve af beton og måles for indholdet af PCB."};
+	var bmpCHL = {beskrivelse: "Chlorparaffiner (ikke-akkrediteret)", pis: 1092,5, info: "Er der mistanke om Chlorparaffiner udtages en materialeprøve og koncentrationes måles. Prøven er ikke akkrediteret."};
+	
+	var bygMaterialeProver = [bmpASB, bmpBLY, bmp6MET, bmpFUG, bmpMAL, bmpBET, bmpCHL];
+	
+	//var bmp = {beskrivelse: "", pis: , info: ""};
 });
 };
 
