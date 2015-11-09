@@ -68,8 +68,11 @@ $(document).ready(function(){
 		//we need this for some relative styling on non iPhones...
         getSize();
         
-        //needed to show the NemVagt logo on top of all screens
+        //needed to show the  logo on top of all screens
         showLogo();
+		
+		//shows the contact information on thje bottom of all screens
+		showContactInfo();
         
         //is used to listen for the "pause" event...
         document.addEventListener("pause", onPause, false);
@@ -89,7 +92,7 @@ $(document).ready(function(){
 		showMiljoIndicatorChoice();
 	});
 	
-	//closes the app on pause, is used to circumvent our state problem
+	//closes the app on pause
     function onPause() {
 		//closes the app, if people minimize/navigate away from it, also means the app always starts fresh.
         navigator.app.exitApp();
@@ -159,11 +162,17 @@ $(document).ready(function(){
 		}, 1);
 	};
 	
-	
+	//inserts the "Klein-Miljø" logo in top of all pages.
 	function showLogo() {
-		//inserts the "Klein-Miljø" logo in top of all pages.
         $("#lCont").append('<img src="img/LogoKlein.png" class="img-responsive pull-left" style="margin-top:'+ relativeSize('1vh', 1) +'; width:'+ relativeSize('20vmin', 20) +';" alt="Klein-Miljø" >\
-		<p class="pull-left" style="margin-left: 25px; margin-top: 25px;" >Klein-Miljø Pris Indicator</p>');
+		<p class="pull-left" style="margin-left: 25px; margin-top: 25px;" >Klein-Miljø Pris Indicator</p>'
+		);
+	};
+	
+	//insert the contact information for Klein-Miljø on the bottom of all pages.
+	function showContactInfo() {
+		$("cCont").append('<p>Klein-Miljø - Telefon: +45 20856292 - E-mail: info@geologiskraadgivning.dk</p>'
+		);
 	};
 	
 	//used above to know if we need to handle a backBtn, but also to determine how to style certain elements... this is done because certain older windows and apple phone will have trouble with styling compatability...
