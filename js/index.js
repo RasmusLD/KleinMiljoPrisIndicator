@@ -244,6 +244,13 @@ $(document).ready(function(){
 	
 //objekter / array /info / information; Diverse info vedr. miljøpriser etc
 	
+	//Objekternes data tilgås således:
+	//Vælg objekt(f.eks. bygningerOBJ),
+		//vælg en attribut og en plads i det array som gemmer sig bag attributten(f.eks. MaterialeProver & 0),
+		//nu har man så et objekt med data (i det konkrete eksempel bmpASB), vælg så en attribut (f.eks. beskrivelse) og så objekts beskrivelse
+	//koden fra eksemplet over ville se sådan her ud:
+		//bygningerOBJ["MaterialeProver"][0]["beskrivelse"]
+	
 //Bygninger start
 	
 	//Komplet Bygninger objekt
@@ -255,7 +262,7 @@ $(document).ready(function(){
 	};
 	
 	//Bygninger > Materiale Prøver
-	var bmpASB = {beskrivelse: "Asbest i materialeprøve -mikroskopi", pis: 460.00, info: "I forbindelse med renovering eller nybyggeri kan det være nødvendigt at undersøge materialer, luft eller jord for asbest. Asbest er en fælles betegnelse for en gruppe af fiberformede silikater.\n\
+	var bmpASB = {beskrivelse: "Asbest i materialeprøve -mikroskopi", pris: 460.00, info: "I forbindelse med renovering eller nybyggeri kan det være nødvendigt at undersøge materialer, luft eller jord for asbest. Asbest er en fælles betegnelse for en gruppe af fiberformede silikater.\n\
 \n\
 Asbest typebestemmes og kvantificeres at kvantificere asbest i jord efter metoden: PLM (polariseret lys mikroskopi) på asbestfibre >50 µm, omregning iht Miljøprojekt nr. 1360-2011.\n\
 Der kendes adskillige asbestmineraler, men specielt tre typer har fundet anvendelse:\n\
