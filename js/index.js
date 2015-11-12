@@ -78,12 +78,14 @@ $(document).ready(function(){
         document.addEventListener("pause", onPause, false);
         
         //we're listening for iPhone because windows phones have a backBtn but don't support device.platform...
-        if(!isiPhone) {
-            document.addEventListener("backbutton", onBackKeyDown, false);
-        };
+        //omitted because the default event cannot currently be overridden
+		//if(!isiPhone) {
+            //document.addEventListener("backbutton", onBackKeyDown, false);
+        //};
 		
 		//is used to listen for the "pause" event...
-        document.addEventListener("pause", onPause, false);
+		//omitted because the default event cannot currently be overridden
+        //document.addEventListener("pause", onPause, false);
 		
 		//instantiates var body, that will be used on every page.
 		body = $("#bCont");
