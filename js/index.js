@@ -89,7 +89,8 @@ $(document).ready(function(){
 		body = $("#bCont");
 		
 		//starts up the app's functionality
-		showMiljoIndicatorChoice();
+		//OMITTED FOR TESTING, SHOULD BE UPDATED BEFORE RE-ADDING showMiljoIndicatorChoice();
+		testAccess();
 	});
 	
 	//closes the app on pause
@@ -138,11 +139,73 @@ $(document).ready(function(){
 				//$("#lavUdregning").on("click", function(event) {
 					//event.preventDefault();
 					//showHandleResult();
-				//};
+				//});
 			//}, 1);
 			
 		}, 1);
 	};
+	
+	//testing access to data
+	function testAccess() {
+		
+		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
+		setTimeout(function() {
+			
+			//the var we append to body later on in this method
+			var toAppend = '<form id="testProveForm" class="form-group optionGroup" role="form" method="post" action="">';
+			//a string to store all the select options in, so that we can add them all together append them to the form
+			var selectOptions = "";
+			
+			
+			//bygningerOBJ["MaterialeProver"][0]["beskrivelse"]
+			
+			for(var i = 0; i < bygningerOBJ["MaterialeProver"].length; i++) {
+				var object = bygningerOBJ["MaterialeProver"][i];
+				
+				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
+			};
+			
+			//var data = bygningerOBJ["MaterialeProver"];
+			
+			
+			toAppend +='\
+				<select name="proveType" class="form-control">\
+					'+ selectOptions +'\
+				</select>\
+				\
+				<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">';
+			
+			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
+			toAppend += '<button id="lavUdregning" type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" action="">Lav udregning</button>';
+			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be //showHandleResult
+			toAppend += '</form>';
+			
+			//appends the data from this method
+			$(body).append(toAppend);
+			
+			//setTimeout(function() {
+				$("#lavUdregning").on("click", function(event) {
+					event.preventDefault();
+					testHandleResult();
+				});
+			//}, 1);
+			
+		}, 1);
+		
+	};
+	function testHandleResult() {
+		
+		//the value of the proveType option is the price of the option
+		var price = $("proveType").val();
+		//the value of the antalProver is the number of times we want the option performed
+		var number = $("antalProver").val();
+		//the result of the options
+		var result = price * number;
+		
+		$(body).append('<p>'+ result +'kr<p>');
+		
+	};
+	
 	
 	//will be used to show the options for what to do with the result, send an email, etc...
 	function showHandleResult() {
@@ -203,9 +266,11 @@ $(document).ready(function(){
         };
     };
     
+	//this is called when the "back key" is pressed,
+	//but it seems that the default action can no longer be surpressed...
     function onBackKeyDown() {
         
-		/* Include if using modals, otherwise, pressing back SHOULD do nothing...
+		/* Can be included/fixed if the default action can be overridden.
         modalW.empty();
         
         setTimeout(function() {
@@ -217,7 +282,7 @@ $(document).ready(function(){
                     <h4 class="modal-title" id="myModalLabel">Luk NemVagt?</h4>\
                   </div>\
                   <div class="modal-body">\
-                    Er du sikker på at du ønsker at lukke NemVagt app\'en?\
+                    -- spørge-tekst --\
                   </div>\
                   <div class="modal-footer">\
                     <button type="button" class="btn btn-default btn-lg pull-left" data-dismiss="modal">Nej</button>\
