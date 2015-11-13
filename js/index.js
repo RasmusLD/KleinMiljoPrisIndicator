@@ -98,7 +98,8 @@ $(document).ready(function(){
 	//closes the app on pause
     function onPause() {
 		//closes the app, if people minimize/navigate away from it, also means the app always starts fresh.
-        navigator.app.exitApp();
+        //it is done this way instead of using the exit-on-suspend preference, because that doesn't always work
+		navigator.app.exitApp();
     };
 	
 	//starts up the indicator, populating it with the starting elements
