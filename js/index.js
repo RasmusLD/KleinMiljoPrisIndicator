@@ -36,7 +36,7 @@ var app = {
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function() {
         /* Unused template code
 		var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
