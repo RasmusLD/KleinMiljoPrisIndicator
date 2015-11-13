@@ -150,6 +150,8 @@ $(document).ready(function(){
 	//testing access to data
 	function testAccess() {
 		
+		$(body).empty();
+		
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
 			
