@@ -69,13 +69,13 @@ $(document).ready(function(){
         getSize();
         
         //needed to show the  logo on top of all screens
-        showLogo();
+        //showLogo();
 		
 		//shows the contact information on thje bottom of all screens
-		showContactInfo();
+		//showContactInfo();
         
         //is used to listen for the "pause" event...
-        document.addEventListener("pause", onPause, false);
+        //document.addEventListener("pause", onPause, false);
         
         //we're listening for iPhone because windows phones have a backBtn but don't support device.platform...
         //omitted because the default event cannot currently be overridden
@@ -92,7 +92,9 @@ $(document).ready(function(){
 		
 		//starts up the app's functionality
 		//OMITTED FOR TESTING, SHOULD BE UPDATED BEFORE RE-ADDING showMiljoIndicatorChoice();
-		testAccess();
+		
+		//testAccess();
+		testClean();
 	});
 	
 	//closes the app on pause
@@ -101,6 +103,17 @@ $(document).ready(function(){
         //it is done this way instead of using the exit-on-suspend preference, because that doesn't always work
 		navigator.app.exitApp();
     };
+	
+	//test
+	function testClean() {
+		$(body).empty();
+		
+		setTimeout(function() {
+			$(body).append("<p>testClean success</p>");
+			
+			//$(body).append(<button action="testAccess" class="btn" >testAccess-Button</button>);
+		}, 1);
+	};
 	
 	//starts up the indicator, populating it with the starting elements
 	function showMiljoIndicatorChoice() {
@@ -114,7 +127,7 @@ $(document).ready(function(){
 			var toAppend = '<form id="proveForm" class="form-group" role="form" method="post" action="">';
 			
 			toAppend +='\
-				<select name="proveType">\
+			<select name="proveType">\
 					<option selected disabled hidden value="disabled">Vælg fra menuen</option>\
 					<option value="indendørs maling">indendørs maling</option>\
 					<option value="udendørs maling">udendørs maling</option>\
