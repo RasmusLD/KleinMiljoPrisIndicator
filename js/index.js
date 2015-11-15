@@ -65,6 +65,9 @@ $(document).ready(function(){
 	//this must be the first function, so that the JS instantiates properly
     $(function runOnLoad(){
 		
+		//instantiates all the data variables we'll be using
+		instantiateData();
+		
 		//we need this for some relative styling on non iPhones...
         getSize();
         
@@ -333,7 +336,9 @@ $(document).ready(function(){
 		*/
     };
 	
-	
+	//called from phonegapReady, instantiates all the data we'll be using.
+	//OBS the variables may have to be made global...
+	function instantiateData() {
 //objekter / array /info / information; Diverse info vedr. miljøpriser etc
 	
 	//Objekternes data tilgås således:
@@ -551,6 +556,7 @@ PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt 
 	
 	//skabelon:
 		//var givEtNavn = {beskrivelse: "", pris: , info: ""};
+};
 	
 });
 };
