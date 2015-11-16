@@ -140,11 +140,11 @@ $(document).ready(function(){
 	
 	
 	//Bygninger > Indeklima
-	var binOGF = {beskrivelse: "Olie v. GC FID", pris: 641.50, info: "a"};
-	var binOAB = {beskrivelse: "Olie, C9-C10 aromater og BTEX", pris: 923.25, info: "a"};
-	var binCHO = {beskrivelse: "Chlorede opløsningsmidler", pris: 693.25, info: "a"};
-	var binCHN = {beskrivelse: "Chlorede nedbrydningsprodukter", pris: 693.25, info: "a"};
-	var binPOO = {beskrivelse: "Polære opløsningsmidler", pris: 986.5 , info: "a"};
+	var binOGF = {beskrivelse: "Olie v. GC FID", pris: 641.50, info: "NA"};
+	var binOAB = {beskrivelse: "Olie, C9-C10 aromater og BTEX", pris: 923.25, info: "NA"};
+	var binCHO = {beskrivelse: "Chlorede opløsningsmidler", pris: 693.25, info: "NA"};
+	var binCHN = {beskrivelse: "Chlorede nedbrydningsprodukter", pris: 693.25, info: "NA"};
+	var binPOO = {beskrivelse: "Polære opløsningsmidler", pris: 986.5 , info: "NA"};
 	var binOBC = {beskrivelse: "Olie, C9-C10 aromater og BTEX og chlorede opløsningsmidler", pris: 1015.25, info: ""};
 	var binFOM = {beskrivelse: "Formaltehyd", pris: 1849.00, info: "Koncentrationen af formaldehyd i inde luften måles og afrapporteres i forhold til nationale og internationale standarter."};
 	var binASB = {beskrivelse: "Asbest", pris: 999.00, info: "Koncentrationen af asbestfibre i inde luften måles og afrapporteres i forhold til nationale og internationale standarter. Afrapporteres med anbefalinger til håndtering af problematikken."};
@@ -158,10 +158,160 @@ $(document).ready(function(){
 	var bygIndeklima = [binOGF, binOAB, binCHO, binCHN, binPOO, binOBC, binFOM, binASB, binKVS, binPCB, binFGT, binTMP, binTVO];
 	
 	
+	//Bygninger > Råd og svamp
+	var brsMST = {beskrivelse: "Mycometer-surface test", pris: 718.75, info: "Skimmelprøve; Mycometer-surface test. Ved inspektion opmåles arealet af det berørte område. Laboratorietesten fastlægger hvilken type der er tale om. I afrapporteringen beskrives anbefalinger til udbedring af angrebet. Rapporten er også dokumentation i forbindelse med en eventuel forsikringssag. Kontakt en af vore konsulenter for nærmere rådgivning."};
+	var brsBST = {beskrivelse: "Bactiquant-surface test", pris: 718.75, info: "Bakterier bruges mest i forbindelse med oversvømmelse af kloak. Bactiquant-surface test (bakterie test)\nVed inspektion opmåles arealet af det berørte område. Laboratorietesten fastlægger hvilken type der er tale om. I afrapporteringen beskrives anbefalinger til udbedring af angrebet. Rapporten er også dokumentation i forbindelse med en eventuel forsikringssag. Kontakt en af vore konsulenter for nærmere rådgivning."};
+	var brsLMA = {beskrivelse: "Luftmåling, Mycometer-Air", pris: 718.75, info: "Måler skimmelsporer i indeluft. /nNB kan ikke stå alene"};
+	var brsTOM = {beskrivelse: "Træprøver og øvrige materialeprøver", pris: 661.25, info: "Udtag en prøve og tag foto. Indsend prøve bruges til råd og svamp. \nVed inspektion opmåles arealet af det berørte område. Laboratorietesten fastlægger hvilken type der er tale om. I afrapporteringen beskrives anbefalinger til udbedring af angrebet. Rapporten er også dokumentation i forbindelse med en eventuel forsikringssag. Kontakt en af vore konsulenter for nærmere rådgivning."};
+	var brsVAA = {beskrivelse: "V8-agar aftryksprøve", pris: 632.50, info: "Typebestemmelse af skimmel, bruges som tillæg, kan ikke stå alene, bruges mest i forbindelse med "sygdom". Hvor beborer er blevet tilset af læge. \nVed inspektion opmåles arealet af det berørte område. Laboratorietesten fastlægger hvilken type der er tale om. I afrapporteringen beskrives anbefalinger til udbedring af angrebet. Rapporten er også dokumentation i forbindelse med en eventuel forsikringssag. Kontakt en af vore konsulenter for nærmere rådgivning."};
 	
+	//array med info vedr. Råd og svamp
+	var bygRadOgSvamp = [brsMST, brsBST, brsLMA, brsTOM, brsVAA];
+	
+	
+	//Bygninger > Andre ydelser
+	var bayIBP = {beskrivelse: "Inspektion af bygning-prøvetagning", pris: 2000.00, info: "NA"};
+	var bayART = {beskrivelse: "Afrapportering", pris: 1500.00, info: "NA"};
+	var bayIKA = {beskrivelse: "Interne konsulenttimer antal", pris: 960.00, info: "NA"};
+	var bayEKA = {beskrivelse: "Eksterne konsulenttimer antal", pris: 960.00, info: "NA"};
+	var bayKKM = {beskrivelse: "Kørsel Km", pris: 3.70, info: "NA"};
+	
+	//array med info vedr. Råd og svamp
+	var bygAndreYdelser = [bayIBP, bayART, bayIKA, bayEKA, bayKKM];
+	
+	//Komplet Bygninger objekt
+	var bygningerOBJ = {
+		MaterialeProver: bygMaterialeProver,
+		Indeklima: bygIndeklima,
+		RadOgSvamp: bygRadOgSvamp,
+		AndreYdelser: bygAndreYdelser
+	};
 	
 //Bygninger slut
 	
+//Geoteknik start
+	
+	//Geoteknik > Undersøgelsestype (uden boring)
+	var guuGMV = {beskrivelse: "Geotekniske målinger <1,0 m (vingeforsøg)", pris: 200.00, info: "Første måling indeholder en opstartsomkostning på 1500 kr. \n\nGeoteknik i dybder under 1 meter udføres med håndgrej, resultaterne afrapporteres i geoteknisk rapport."};
+	var guuKMG = {beskrivelse: "Kombinerede miljø- og geoteknisk undersøgelse (håndgrej)", pris: 400.00, info: "Første måling indeholder en opstartsomkostning på 1500 kr. \n\nGeoteknik udføres for at bestemme jordens styrkeparametre forud for byggeri. Mindre opgaver klares med håndbetjent udstyr (vingeslag). Ved større opgaver benyttes borerig, ofte kan man med fordel kombinere geotekniske og miljø undersøgelser."};
+	
+	//array med info vedr. Undersøgelsestype (uden boring)
+	var geoUndersogelsestypeUdenBoring = [guuGMV, guuKMG];
+	
+	
+	//Geoteknik > Undersøgelsestype (med boring)
+	var gubGMD = {beskrivelse: "Geotekniske målinger dybere end 1,0m", pris: 350.00, info: "Geoteknik udføres for at bestemme jordens styrkeparametre forud for byggeri. Mindre opgaver klares med håndbetjent udstyr (vingeslag). Ved større opgaver benyttes borerig, ofte kan man med fordel kombinere geotekniske og miljø undersøgelser."};
+	var gubKMG = {beskrivelse: "Kombinerede miljø- og geotekniske boringer", pris: 350.00, info: "Geoteknik udføres for at bestemme jordens styrkeparametre forud for byggeri. Mindre opgaver klares med håndbetjent udstyr (vingeslag). Ved større opgaver benyttes borerig, ofte kan man med fordel kombinere geotekniske og miljø undersøgelser."};
+	
+	//array med info vedr. Undersøgelsestype (med boring)
+	var geoUndersogelsestypeMedBoring = [gubGMD, gubKMG];
+	
+	
+	//Geoteknik > Ansvar og tillægsydelser
+	var gatLSF = {beskrivelse: "LER-søgning inkl. forsikring", pris: 1500.00, info: "LER er en fortegnelse over rør og ledninger i jorden. Den der foretager LER søgningen påtager sig samtidig ansvaret for påboringsskader."};
+	var gatOBR = {beskrivelse: "Opbrydning af belægning+ reetablering", pris: 350.00, info: "Ved borearbejder kan der opstå skader i belægninger, der skal reetableres. Prisen er en vurderet standartpris, men forbundet med stor usikkerhed."};
+	
+	//array med info vedr. Ansvar og tillægsydelser
+	var geoAnsvarOgTillegsydelser = [gatLSF, gatOBR];
+	
+	
+	//Geoteknik > Andre ydelser
+	var gayAGB = {beskrivelse: "Afrapportering og geotekniske beregninger", pris: 4000.00, info: "Måleresultater, observationer og beregninger afrapporteres efter gældende normer."};
+	var gayKUO = {beskrivelse: "Konsulenttimer ud over", pris: 750.00, info: "Dækker anvendt tid der ikke er omfattet af prøvetagning og afrapportering"};
+	
+	//array med info vedr. Andre ydelser
+	var geoAndreYdelser = [gayAGB, gayKUO];
+	
+	//Komplet Geoteknik objekt
+	var geoteknikOBJ = {
+		UndersøgelsestypeUdenBoring: geoUndersogelsestypeUdenBoring,
+		UndersogelsestypeMedBoring: geoUndersogelsestypeMedBoring,
+		AnsvarOgTillegsydelser: geoAnsvarOgTillegsydelser,
+		AndreYdelser: geoAndreYdelser
+	};
+	
+//Geoteknik slut
+	
+//Jord start
+	
+	//Jord > Jordprover
+	var jjdJOJ = {beskrivelse: "Jordpakken Olie i jord ved GC-FID  (C6-C35)", pris: 224.25, info: "NA"};
+	var jjdOJB = {beskrivelse: "Olie i jord + BTEX ved GC-FID Jord enkeltstående analyse", pris: 270.25, info: "NA"};
+	var jjdPJM = {beskrivelse: "PAH (7 stk.) i jord efter Reflab 4", pris: 258.75, info: "NA"};
+	var jjdM1M = {beskrivelse: "Metaller i jord Ét metal (As, Pb, Cd etc.)", pris: 172.50, info: "NA"};
+	var jjdM4M = {beskrivelse: "Metaller i jord 4 metaller (Cd, Cu, Pb, Zn)", pris: 201.25, info: "NA"};
+	var jjdM6M = {beskrivelse: "Metaller i jord 6 metaller (Cd, Cu, Cr, Ni, Pb, Zn)", pris: 224.25, info: "NA"};
+	var jjdKVK = {beskrivelse: "Kviksølv (Hg) (10 dages levering)", pris: 316.25, info: "NA"};
+	var jjdJOP = {beskrivelse: "Jord samlet pakke Olie + PAH", pris: 345.00, info: "NA"};
+	var jjdJO6 = {beskrivelse: "Jord samlet pakke Olie + 6 metal (Cd, Cr, Cu, Ni, Pb, Zn)", pris: 345.00, info: "NA"};
+	var jjdJP6 = {beskrivelse: "Jord samlet pakke PAH + 6 metal (Cd, Cr, Cu, Ni, Pb, Zn)", pris: 345.00, info: "NA"};
+	var jjdPOB = {beskrivelse: "Jord samlet pakke Olie + PAH + 6 metal (Cd, Cr, Cu, Ni, Pb, Zn) + BTEX", pris: 431.25, info: "NA"};
+	var jjdPOP = {beskrivelse: "Jord samlet pakke Olie + PAH + 6 metal (Cd, Cr, Cu, Ni, Pb, Zn)", pris: 402.50, info: "NA"};
+	var jjdCAR = {beskrivelse: "Chlorede alifater efter Reflab 1", pris: 333.50, info: "NA"};
+	var jjdCNP = {beskrivelse: "Chlorede nedbrydningsprodukter (ikke – akkrediteret)", pris: 454.25, info: "NA"};
+	var jjdPJK = {beskrivelse: "pH i jord Kr.", pris: 126.25, info: "NA"};
+	var jjdPCB = {beskrivelse: "PCB i jord", pris: 402.50, info: "NA"};
+	var jjdAKP = {beskrivelse: "Asbest i jordprøve, Kvalitativ - polarisationsmikroskopi", pris: 900.00, info: "NA"};
+	
+	//array med info vedr. Jordprover
+	var jorJordprover = [jjdJOJ, jjdOJB, jjdPJM, jjdM1M, jjdM4M, jjdM6M,
+	jjdKVK, jjdJOP, jjdJO6, jjdJP6, jjdPOB, jjdPOP, jjdCAR, jjdCNP, jjdPJK,
+	jjdPCB, jjdAKP];
+	
+	
+	//Jord > Poreluft
+	var jplOGF = {beskrivelse: "Olie v. GC FID", pris: 641.50, info: "NA"};
+	var jplOAB = {beskrivelse: "Olie, C9-C10 aromater og BTEX", pris: 923.25, info: "NA"};
+	var jplCOM = {beskrivelse: "Chlorede opløsningsmidler", pris: 693.25, info: "NA"};
+	var jplCNM = {beskrivelse: "Chlorede nedbrydningsprodukter", pris: 693.25, info: "NA"};
+	var jplPOM = {beskrivelse: "Polære opløsningsmidler", pris: 986.50, info: "NA"};
+	var jplABC = {beskrivelse: "Olie, C9-C10 aromater og BTEX og chlorede opløsningsmidler", pris: 1015.25, info: "NA"};
+	
+	//array med info vedr. Poreluft
+	var jorPoreluft = [jplOGF, jplOAB, jplCOM, jplCNM, jplPOM, jplABC];
+	
+	
+	//Jord > Vandprover
+	var jvpOGF = {beskrivelse: "Olie v. GC FID", pris: 237.50, info: "NA"};
+	var jvpOGB = {beskrivelse: "Olie v. GC FID og BTEX v. GC FID", pris: 237.50, info: "NA"};
+	var jvpOBG = {beskrivelse: "Olie v. GC FID og BTEX v. GC MS", pris: 312.50, info: "NA"};
+	var jvpCOM = {beskrivelse: "Chlorede opløsningsmidler", pris: 250.00, info: "NA"};
+	var jvpCNP = {beskrivelse: "Chlorede nedbrydningsprodukter som tillæg", pris: 250.00, info: "NA"};
+	var jvpCON = {beskrivelse: "Chlorerede opløsningsmidler og nedbrydningsprodukter", pris: 312.50, info: "NA"};
+	var jvpBCO = {beskrivelse: "BTEX + Chlorede opløsningsmidler v. HS-GC MS", pris: 312.50, info: "NA"};
+	var jvpBON = {beskrivelse: "BTEX + Chlorede opløsningsmidler og nedbrydningsprodukter", pris: 375.00, info: "NA"};
+	var jvpMV1 = {beskrivelse: "Metaller i vand v. ICP: 1 stk.", pris: 312.50, info: "NA"};
+	var jvpMV2 = {beskrivelse: "Metaller i vand v. ICP: 2 stk.efterfølgende 80 kr pr. metal", pris: 406.25, info: "NA"};
+	var jvpMVI = {beskrivelse: "Metaller i vand v. ICP MS: 1 stk. Kr.", pris: 375.00, info: "NA"};
+	var jvpHGV = {beskrivelse: "Hg i vand", pris: 375.00, info: "NA"};
+	var jvpJFJ = {beskrivelse: "Jern + filtreret Jern", pris: 437.50, info: "NA"};
+	var jvpPDN = {beskrivelse: "Pesticider (Drikkevandsbekendtgørelsen)", pris: 2250.00, info: "NA"};
+	var jvpPVS = {beskrivelse: "PAH i vand 7 stoffer", pris: 468.75, info: "NA"};
+	
+	//array med info vedr. Vandprover
+	var jorVandprover = [jvpOGF, jvpOGB, jvpOBG, jvpCOM, jvpCNP, jvpCON,
+	jvpBCO, jvpBON, jvpMV1, jvpMV2, jvpMVI, jvpHGV, jvpJFJ, jvpPDN, jvpPVS];
+	
+	
+	//Jord > Andre ydelser
+	var jayIBP = {beskrivelse: "Inspektion af bygning-prøvetagning", pris: 2000.00, info: "NA"};
+	var jayART = {beskrivelse: "Afrapportering", pris: 1500.00, info: "NA"};
+	var jayIKT = {beskrivelse: "Interne konsulenttimer antal", pris: 960.00, info: "NA"};
+	var jayEKT = {beskrivelse: "Eksterne konsulenttimer antal", pris: 960.00, info: "NA"};
+	var jayKKM = {beskrivelse: "Kørsel Km", pris: 3.70, info: "NA"};
+	
+	//array med info vedr. Andre ydelser
+	var jorAndreYdelser = [jayIBP, jayART, jayIKT, jayEKT, jayKKM];
+	
+	//Komplet Jord objekt
+	var jordOBJ = {
+		Jordprover: jorJordprover,
+		Poreluft: jorPoreluft,
+		Vandprover: jorVandprover,
+		AndreYdelser: jorAndreYdelser
+	};
+	
+//Jord slut
 	
 	//skabelon:
 		//var givEtNavn = {beskrivelse: "", pris: , info: ""};
