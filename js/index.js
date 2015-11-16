@@ -126,14 +126,6 @@ $(document).ready(function(){
 	
 //Bygninger start
 	
-	//Komplet Bygninger objekt
-	var bygningerOBJ = {
-		MaterialeProver: bygMaterialeProver,
-		Indeklima: bygIndeklima,
-		RadOgSvamp: bygRadOgSvamp,
-		AndreYdelser: bygAndreYdelser
-	};
-	
 	//Bygninger > Materiale Prøver
 	var bmpASB = {beskrivelse: "Asbest i materialeprøve -mikroskopi", pris: 460.00, info: "I forbindelse med renovering eller nybyggeri kan det være nødvendigt at undersøge materialer, luft eller jord for asbest. Asbest er en fælles betegnelse for en gruppe af fiberformede silikater.\n\
 \n\
@@ -204,17 +196,17 @@ PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt 
 	//array med info vedr. Råd og svamp
 	var bygAndreYdelser = [bayIBP, bayART, bayIKA, bayEKA, bayKKM];
 	
+	//Komplet Bygninger objekt
+	var bygningerOBJ = {
+		MaterialeProver: bygMaterialeProver,
+		Indeklima: bygIndeklima,
+		RadOgSvamp: bygRadOgSvamp,
+		AndreYdelser: bygAndreYdelser
+	};
+	
 //Bygninger slut
 	
 //Geoteknik start
-	
-	//Komplet Geoteknik objekt
-	var geoteknikOBJ = {
-		UndersøgelsestypeUdenBoring: geoUndersogelsestypeUdenBoring,
-		UndersogelsestypeMedBoring: geoUndersogelsestypeMedBoring,
-		AnsvarOgTillegsydelser: geoAnsvarOgTillegsydelser,
-		AndreYdelser: geoAndreYdelser
-	};
 	
 	//Geoteknik > Undersøgelsestype (uden boring)
 	var guuGMV = {beskrivelse: "Geotekniske målinger <1,0 m (vingeforsøg)", pris: 200.00, info: "Første måling indeholder en opstartsomkostning på 1500 kr. \n\nGeoteknik i dybder under 1 meter udføres med håndgrej, resultaterne afrapporteres i geoteknisk rapport."};
@@ -247,17 +239,17 @@ PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt 
 	//array med info vedr. Andre ydelser
 	var geoAndreYdelser = [gayAGB, gayKUO];
 	
+	//Komplet Geoteknik objekt
+	var geoteknikOBJ = {
+		UndersøgelsestypeUdenBoring: geoUndersogelsestypeUdenBoring,
+		UndersogelsestypeMedBoring: geoUndersogelsestypeMedBoring,
+		AnsvarOgTillegsydelser: geoAnsvarOgTillegsydelser,
+		AndreYdelser: geoAndreYdelser
+	};
+	
 //Geoteknik slut
 	
 //Jord start
-	
-	//Komplet Jord objekt
-	var jordOBJ = {
-		Jordprover: jorJordprover,
-		Poreluft: jorPoreluft,
-		Vandprover: jorVandprover,
-		AndreYdelser: jorAndreYdelser
-	};
 	
 	//Jord > Jordprover
 	var jjdJOJ = {beskrivelse: "Jordpakken Olie i jord ved GC-FID  (C6-C35)", pris: 224.25, info: ""};
@@ -327,6 +319,14 @@ PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt 
 	
 	//array med info vedr. Andre ydelser
 	var jorAndreYdelser = [jayIBP, jayART, jayIKT, jayEKT, jayKKM];
+	
+	//Komplet Jord objekt
+	var jordOBJ = {
+		Jordprover: jorJordprover,
+		Poreluft: jorPoreluft,
+		Vandprover: jorVandprover,
+		AndreYdelser: jorAndreYdelser
+	};
 	
 //Jord slut
 	
