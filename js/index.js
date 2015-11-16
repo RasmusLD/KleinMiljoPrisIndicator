@@ -72,13 +72,13 @@ $(document).ready(function(){
         getSize();
         
         //needed to show the  logo on top of all screens
-        //showLogo();
+        showLogo();
 		
 		//shows the contact information on thje bottom of all screens
-		//showContactInfo();
+		showContactInfo();
         
         //is used to listen for the "pause" event...
-        //document.addEventListener("pause", onPause, false);
+        document.addEventListener("pause", onPause, false);
         
         //we're listening for iPhone because windows phones have a backBtn but don't support device.platform...
         //omitted because the default event cannot currently be overridden
@@ -86,18 +86,14 @@ $(document).ready(function(){
             //document.addEventListener("backbutton", onBackKeyDown, false);
         //};
 		
-		//is used to listen for the "pause" event...
-		//omitted because the default event cannot currently be overridden
-        //document.addEventListener("pause", onPause, false);
-		
 		//instantiates var body, that will be used on every page.
 		body = $("#bCont");
 		
 		//starts up the app's functionality
 		//OMITTED FOR TESTING, SHOULD BE UPDATED BEFORE RE-ADDING showMiljoIndicatorChoice();
 		
-		//testAccess();
-		testClean();
+		testAccess();
+		//testClean();
 	});
 	
 	//closes the app on pause
