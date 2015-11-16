@@ -93,7 +93,7 @@ $(document).ready(function(){
 		//OMITTED FOR TESTING, SHOULD BE UPDATED BEFORE RE-ADDING showMiljoIndicatorChoice();
 		
 		//testAccess();
-		//testClean();
+		testClean();
 	});
 	
 	//closes the app on pause
