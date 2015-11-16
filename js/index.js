@@ -75,7 +75,7 @@ $(document).ready(function(){
         showLogo();
 		
 		//shows the contact information on thje bottom of all screens
-		showContactInfo();
+		//showContactInfo();
         
         //is used to listen for the "pause" event...
         document.addEventListener("pause", onPause, false);
