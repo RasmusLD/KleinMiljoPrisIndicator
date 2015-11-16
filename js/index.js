@@ -70,7 +70,7 @@ $(document).ready(function(){
         getSize();
         
         //needed to show the  logo on top of all screens
-        //showLogo();
+        showLogo();
 		
 		//shows the contact information on thje bottom of all screens
 		//showContactInfo();
