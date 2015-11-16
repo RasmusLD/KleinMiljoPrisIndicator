@@ -246,9 +246,7 @@ $(document).ready(function(){
 	
 	//inserts the "Klein-Miljø" logo in top of all pages.
 	function showLogo() {
-        $("#lCont").append('<img src="img/LogoKlein.png" class="img-responsive pull-left" style="margin-top:'+ relativeSize('1vmin', 1) +'; width:'+ relativeSize('20vmin', 20) +';" alt="Klein-Miljø" >\
-		<p class="pull-left" style="margin-left: 25px; margin-top: 25px;" >Klein-Miljø Pris Indicator</p>'
-		);
+        $("#lCont").append('<img src="img/LogoKlein.png" class="img-responsive pull-left" style="margin-top: 1vmin; width: 20vmin;" alt="Klein-Miljø" > <p class="pull-left" style="margin-left: 25px; margin-top: 25px;" >Klein-Miljø Pris Indicator</p>');
 	};
 	
 	//insert the contact information for Klein-Miljø on the bottom of all pages.
