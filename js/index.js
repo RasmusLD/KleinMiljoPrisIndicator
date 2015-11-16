@@ -41,10 +41,8 @@ var app = {
 		var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
-
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
         console.log('Received Event: ' + id);*/
 		
 		//this call starts showing our content and initializes the js code
@@ -72,19 +70,23 @@ $(document).ready(function(){
         getSize();
         
         //needed to show the  logo on top of all screens
-        showLogo();
+        //showLogo();
 		
 		//shows the contact information on thje bottom of all screens
 		//showContactInfo();
         
         //is used to listen for the "pause" event...
-        document.addEventListener("pause", onPause, false);
+        //document.addEventListener("pause", onPause, false);
         
         //we're listening for iPhone because windows phones have a backBtn but don't support device.platform...
         //omitted because the default event cannot currently be overridden
 		//if(!isiPhone) {
             //document.addEventListener("backbutton", onBackKeyDown, false);
         //};
+		
+		//is used to listen for the "pause" event...
+		//omitted because the default event cannot currently be overridden
+        //document.addEventListener("pause", onPause, false);
 		
 		//instantiates var body, that will be used on every page.
 		body = $("#bCont");
@@ -556,5 +558,4 @@ PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt 
 	
 });
 };
-
 
