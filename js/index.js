@@ -140,11 +140,11 @@ $(document).ready(function(){
 	
 	
 	//Bygninger > Indeklima
-	var binOGF = {beskrivelse: "Olie v. GC FID", pris: 641.50, info: ""};
-	var binOAB = {beskrivelse: "Olie, C9-C10 aromater og BTEX", pris: 923.25, info: ""};
-	var binCHO = {beskrivelse: "Chlorede opløsningsmidler", pris: 693.25, info: ""};
-	var binCHN = {beskrivelse: "Chlorede nedbrydningsprodukter", pris: 693.25, info: ""};
-	var binPOO = {beskrivelse: "Polære opløsningsmidler", pris: 986.5 , info: ""};
+	var binOGF = {beskrivelse: "Olie v. GC FID", pris: 641.50, info: "a"};
+	var binOAB = {beskrivelse: "Olie, C9-C10 aromater og BTEX", pris: 923.25, info: "a"};
+	var binCHO = {beskrivelse: "Chlorede opløsningsmidler", pris: 693.25, info: "a"};
+	var binCHN = {beskrivelse: "Chlorede nedbrydningsprodukter", pris: 693.25, info: "a"};
+	var binPOO = {beskrivelse: "Polære opløsningsmidler", pris: 986.5 , info: "a"};
 	var binOBC = {beskrivelse: "Olie, C9-C10 aromater og BTEX og chlorede opløsningsmidler", pris: 1015.25, info: ""};
 	var binFOM = {beskrivelse: "Formaltehyd", pris: 1849.00, info: "Koncentrationen af formaldehyd i inde luften måles og afrapporteres i forhold til nationale og internationale standarter."};
 	var binASB = {beskrivelse: "Asbest", pris: 999.00, info: "Koncentrationen af asbestfibre i inde luften måles og afrapporteres i forhold til nationale og internationale standarter. Afrapporteres med anbefalinger til håndtering af problematikken."};
@@ -157,27 +157,6 @@ $(document).ready(function(){
 	//array med info vedr. Indeklima
 	var bygIndeklima = [binOGF, binOAB, binCHO, binCHN, binPOO, binOBC, binFOM, binASB, binKVS, binPCB, binFGT, binTMP, binTVO];
 	
-	
-	//Bygninger > Råd og svamp
-	var brsMST = {beskrivelse: "Mycometer-surface test", pris: 718.75, info: "Skimmelprøve; Mycometer-surface test. Ved inspektion opmåles arealet af det berørte område. Laboratorietesten fastlægger hvilken type der er tale om. I afrapporteringen beskrives anbefalinger til udbedring af angrebet. Rapporten er også dokumentation i forbindelse med en eventuel forsikringssag. Kontakt en af vore konsulenter for nærmere rådgivning."};
-	var brsBST = {beskrivelse: "Bactiquant-surface test", pris: 718.75, info: "Bakterier bruges mest i forbindelse med oversvømmelse af kloak. Bactiquant-surface test (bakterie test)\nVed inspektion opmåles arealet af det berørte område. Laboratorietesten fastlægger hvilken type der er tale om. I afrapporteringen beskrives anbefalinger til udbedring af angrebet. Rapporten er også dokumentation i forbindelse med en eventuel forsikringssag. Kontakt en af vore konsulenter for nærmere rådgivning."};
-	var brsLMA = {beskrivelse: "Luftmåling, Mycometer-Air", pris: 718.75, info: "Måler skimmelsporer i indeluft. /nNB kan ikke stå alene"};
-	var brsTOM = {beskrivelse: "Træprøver og øvrige materialeprøver", pris: 661.25, info: "Udtag en prøve og tag foto. Indsend prøve bruges til råd og svamp. \nVed inspektion opmåles arealet af det berørte område. Laboratorietesten fastlægger hvilken type der er tale om. I afrapporteringen beskrives anbefalinger til udbedring af angrebet. Rapporten er også dokumentation i forbindelse med en eventuel forsikringssag. Kontakt en af vore konsulenter for nærmere rådgivning."};
-	var brsVAA = {beskrivelse: "V8-agar aftryksprøve", pris: 632.50, info: "Typebestemmelse af skimmel, bruges som tillæg, kan ikke stå alene, bruges mest i forbindelse med "sygdom". Hvor beborer er blevet tilset af læge. \nVed inspektion opmåles arealet af det berørte område. Laboratorietesten fastlægger hvilken type der er tale om. I afrapporteringen beskrives anbefalinger til udbedring af angrebet. Rapporten er også dokumentation i forbindelse med en eventuel forsikringssag. Kontakt en af vore konsulenter for nærmere rådgivning."};
-	
-	//array med info vedr. Råd og svamp
-	var bygRadOgSvamp = [brsMST, brsBST, brsLMA, brsTOM, brsVAA];
-	
-	
-	//Bygninger > Andre ydelser
-	var bayIBP = {beskrivelse: "Inspektion af bygning-prøvetagning", pris: 2000.00, info: ""};
-	var bayART = {beskrivelse: "Afrapportering", pris: 1500.00, info: ""};
-	var bayIKA = {beskrivelse: "Interne konsulenttimer antal", pris: 960.00, info: ""};
-	var bayEKA = {beskrivelse: "Eksterne konsulenttimer antal", pris: 960.00, info: ""};
-	var bayKKM = {beskrivelse: "Kørsel Km", pris: 3.70, info: ""};
-	
-	//array med info vedr. Råd og svamp
-	var bygAndreYdelser = [bayIBP, bayART, bayIKA, bayEKA, bayKKM];
 	
 	
 	
