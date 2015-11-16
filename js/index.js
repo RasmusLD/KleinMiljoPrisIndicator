@@ -179,13 +179,7 @@ $(document).ready(function(){
 	//array med info vedr. Råd og svamp
 	var bygAndreYdelser = [bayIBP, bayART, bayIKA, bayEKA, bayKKM];
 	
-	//Komplet Bygninger objekt
-	var bygningerOBJ = {
-		MaterialeProver: bygMaterialeProver,
-		Indeklima: bygIndeklima,
-		RadOgSvamp: bygRadOgSvamp,
-		AndreYdelser: bygAndreYdelser
-	};
+	
 	
 //Bygninger slut
 	
