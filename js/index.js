@@ -251,7 +251,7 @@ $(document).ready(function(){
 	
 	//insert the contact information for Klein-Miljø on the bottom of all pages.
 	function showContactInfo() {
-		$("cCont").append('<p>Klein-Miljø - Telefon: +45 20856292 - Kontor: Titmosevej 1, 4200 Slagelse - Filial: Gl. Køge Landevej 55, 3., 2500 Valby - E-mail: info@geologiskraadgivning.dk</p>');
+		$("#cCont").append('<p>Klein-Miljø - Telefon: +45 20856292 - Kontor: Titmosevej 1, 4200 Slagelse - Filial: Gl. Køge Landevej 55, 3., 2500 Valby - E-mail: info@geologiskraadgivning.dk</p>');
 	};
 	
 	//used above to know if we need to handle a backBtn, but also to determine how to style certain elements... this is done because certain older windows and apple phone will have trouble with styling compatability...
