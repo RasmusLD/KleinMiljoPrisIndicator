@@ -206,6 +206,9 @@ $(document).ready(function(){
 			//a string to store all the select options in, so that we can add them all together append them to the form
 			var selectOptions = "";
 			
+			$(body).append('<p>skal til at starte for loop\'et som går igennem/tilgår dataen.</p>');
+			$(body).append('<p>'+ bygningerOBJ["MaterialeProver"].length +'</p>');
+			$(body).append('<p>'+ bygningerOBJ["MaterialeProver"][0]["beskrivelse"] +'</p>');
 			
 			//bygningerOBJ["MaterialeProver"][0]["beskrivelse"]
 			
