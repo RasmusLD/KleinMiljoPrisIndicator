@@ -242,14 +242,10 @@ $(document).ready(function(){
 			
 			//$(body).append('<p>skal til at tilføje strukturen til toAppend, inklusiv at proppe selectOptions derind.</p>');
 			toAppend +='<div class="input-group form-group">\
-				<span class="form-control">\
 					<select id="proveType" name="proveType" class="form-control">\
 						'+ selectOptions +'\
 					</select>\
-				</span>\
-				<span class="form-control">\
 					<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">\
-				</span>\
 				</div>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
