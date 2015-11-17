@@ -199,6 +199,8 @@ $(document).ready(function(){
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
 			
+			$(body).append('<p>er i timeout\'et hvor formen laves og append\'es formen</p>');
+			
 			//the var we append to body later on in this method
 			var toAppend = '<form id="testProveForm" class="form-group optionGroup" role="form" method="post" action="">';
 			//a string to store all the select options in, so that we can add them all together append them to the form
@@ -230,6 +232,7 @@ $(document).ready(function(){
 			
 			//appends the data from this method
 			$(body).append(toAppend);
+			$(body).append('<p>har append\'et formen</p>');
 			
 			//setTimeout(function() {
 				$("#lavUdregning").on("click", function(event) {
