@@ -126,7 +126,7 @@ $(document).ready(function(){
 	men dette er bonus...
 	
 	Der SKAL tilføjes en listen'er, så at der altid laves en ekstra dropdown menu,
-	når den gamle er blevet udfyldt...
+	når den gamle er blevet udfyldt... (noget allá, .selectKLasse -> onDeselect -> repeat the "4 loops")
 	
 	Der SKAL også laves en info knap, der kan vise "info" om det man har valgt...
 	*/
@@ -168,7 +168,7 @@ $(document).ready(function(){
 			//appends the data from this method
 			$(body).append(toAppend);
 			
-			//an onClick listener, that targets the form's button and overrides the default event
+			//an onclick listener, that targets the form's button and overrides the default event
 			$("#lavUdregning").on("click", function(event) {
 				event.preventDefault();
 				handleResult();
@@ -256,10 +256,10 @@ $(document).ready(function(){
 				testHandleResult();
 			});
 			//handles the onclick events for info buttons
-			$(".infoBtnClass").on("click", function(event) {
-				event.preventDefault();
-				$(this).closest(".").
-			});
+			//$(".infoBtnClass").on("click", function(event) {
+				//event.preventDefault();
+				//$(this).closest(".form-control").
+			//});
 			
 			//$(body).append('<p>har lavet en listener og er nu færdig med metoden.</p>');
 			
