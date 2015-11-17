@@ -125,6 +125,40 @@ $(document).ready(function(){
 		
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
+			
+			//the var we append to body later on in this method
+			var toAppend = '<form id="testProveForm" class="form-group optionGroup" role="form" method="post" action="">';
+			//a string to store all the select options in, so that we can add them all together append them to the form
+			var selectOptions = "";
+			
+			//iterate through the options and add the options to the selectOptions string
+			for(var i = 0; i < bygningerOBJ["MaterialeProver"].length; i++) {
+				var object = bygningerOBJ["MaterialeProver"][i];
+				$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
+				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
+			};
+			
+			toAppend +='\
+				<select id="proveType" name="proveType" class="form-control">\
+					'+ selectOptions +'\
+				</select>\
+				\
+				<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">';
+			
+			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
+			toAppend += '<button id="lavUdregning" type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" action="">Lav udregning</button>';
+			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be //showHandleResult
+			toAppend += '</form>';
+			
+			//appends the data from this method
+			$(body).append(toAppend);
+			
+			//an onClick listener, that targets the form's button and overrides the default event
+			$("#lavUdregning").on("click", function(event) {
+				event.preventDefault();
+				handleResult();
+			});
+			
 		}, 1);
 	};
 	function showGeoteknik() {
@@ -145,50 +179,9 @@ $(document).ready(function(){
 	};
 //Grouping End
 	
-	//starts up the indicator, populating it with the starting elements
-	function showMiljoIndicatorChoice() {
-		//done to clean the "body"
-		$(body).empty();
-		
-		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
-		setTimeout(function() {
-			
-			//the var we append to body later on in this method
-			var toAppend = '<form id="proveForm" class="form-group" role="form" method="post" action="">';
-			
-			toAppend +='\
-			<select name="proveType">\
-					<option selected disabled hidden value="disabled">Vælg fra menuen</option>\
-					<option value="indendørs maling">indendørs maling</option>\
-					<option value="udendørs maling">udendørs maling</option>\
-					<option value="jord">jord</option>\
-					<option value="grus">grus</option>\
-				</select>\
-				\
-				<select name="antalProver">\
-					<option selected disabled hidden value="disabled">Vælg antal</option>\
-					<option value="1">1</option>\
-					<option value="2">2</option>\
-					<option value="3">3</option>\
-					<option value="4">4</option>\
-				</select>';
-			
-			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
-			toAppend += '<button type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" id="lavUdregning" action="">Lav udregning</button>';
-			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be //showHandleResult
-			toAppend += '</form>';
-			
-			//appends the data from this method
-			$(body).append(toAppend);
-			
-			//setTimeout(function() {
-				//$("#lavUdregning").on("click", function(event) {
-					//event.preventDefault();
-					//showHandleResult();
-				//});
-			//}, 1);
-			
-		}, 1);
+	//a function to handle the calculation and showing of results.
+	function handleResult() {
+		$(body).append('<p>Pris for prøven: "the total price" kr<p>');
 	};
 	
 	//testing access to data
@@ -257,10 +250,10 @@ $(document).ready(function(){
 		
 		//the value of the proveType option is the price of the option
 		var price = $("#proveType").val();
-		$(body).append('<p>price: '+ price +'</p>');
+		//$(body).append('<p>price: '+ price +'</p>');
 		//the value of the antalProver is the number of times we want the option performed
 		var number = $("#antalProver").val();
-		$(body).append('<p>number: '+ number +'</p>');
+		//$(body).append('<p>number: '+ number +'</p>');
 		//the result of the options
 		var result = parseFloat(price) * parseFloat(number);
 		$(body).append('<p>Pris for prøven: '+ result +' kr<p>');
