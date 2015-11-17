@@ -49,7 +49,7 @@ var app = {
 		//timeout set to allow users to see the splash screen
 		setTimeout(function() {
             phonegapReady();
-        }, 3000);
+        }, 2000);
     }
 };
 
@@ -79,7 +79,7 @@ $(document).ready(function(){
 		showContactInfo();
         
         //is used to listen for the "pause" event...
-        //document.addEventListener("pause", onPause, false);
+        document.addEventListener("pause", onPause, false);
         
         //we're listening for iPhone because windows phones have a backBtn but don't support device.platform...
         //omitted because the default event cannot currently be overridden
@@ -87,23 +87,21 @@ $(document).ready(function(){
             //document.addEventListener("backbutton", onBackKeyDown, false);
         //};
 		
-		//is used to listen for the "pause" event...
-		//omitted because the default event cannot currently be overridden
-        //document.addEventListener("pause", onPause, false);
-		
 		//instantiates var body, that will be used on every page.
 		body = $("#bCont");
 		
-		//starts up the app's functionality
-		//OMITTED FOR TESTING, SHOULD BE UPDATED BEFORE RE-ADDING showMiljoIndicatorChoice();
+		//starts up the "bygninger" option, could start on any of the pages, but we want to start somewhere
+		//a page explaining the app could be called instead.
+		showBygninger();
 		
-		//testAccess();
-		testClean();
+		testAccess();
+		//testClean();
 	});
 	
 	//closes the app on pause
     function onPause() {
 		//closes the app, if people minimize/navigate away from it, also means the app always starts fresh.
+		//closing the app is done to ensure consistent behaviour when opening the app.
         //it is done this way instead of using the exit-on-suspend preference, because that doesn't always work
 		navigator.app.exitApp();
     };
@@ -254,25 +252,6 @@ $(document).ready(function(){
 		
 		$(body).append('<p>'+ result +'kr<p>');
 		
-	};
-	
-	
-	//will be used to show the options for what to do with the result, send an email, etc...
-	function showHandleResult() {
-		//done to clean the "body"
-		$(body).empty();
-		
-		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
-		setTimeout(function() {
-			
-			$(body).append('<h3>Pris i kr: 5000</h3>\
-			<form action="">\
-				<input type="radio" name="kontakt" value="tagPrøven">Jeg ønsker at bestille prøvetagningen<br>\
-				<input type="radio" name="kontakt" value="givTilbud">Jeg ønsker at modtage et skriftligt tilbud<br>\
-				<input type="radio" name="kontakt" value="ringMig">Jeg ønskerat modtage en oprigning af en konsulent<br>\
-			</form>');
-			
-		}, 1);
 	};
 	
 	//inserts the "Klein-Miljø" logo in top of all pages.
