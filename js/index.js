@@ -115,6 +115,34 @@ $(document).ready(function(){
 			//$(body).append(<button action="testAccess" class="btn" >testAccess-Button</button>);
 		}, 1);
 	};
+
+//Grouping Start (grouped for convenience, as they do roughly the same things)
+//functions called to show the different options, they are called from the menu and showBygninger is also called initially on start-up
+	function showBygninger() {
+		//done to clean the "body"
+		$(body).empty();
+		
+		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
+		setTimeout(function() {
+		}, 1);
+	};
+	function showGeoteknik() {
+		//done to clean the "body"
+		$(body).empty();
+		
+		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
+		setTimeout(function() {
+		}, 1);
+	};
+	function showJord() {
+		//done to clean the "body"
+		$(body).empty();
+		
+		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
+		setTimeout(function() {
+		}, 1);
+	};
+//Grouping End
 	
 	//starts up the indicator, populating it with the starting elements
 	function showMiljoIndicatorChoice() {
@@ -329,6 +357,30 @@ $(document).ready(function(){
         
         }, 10);
 		*/
+    };
+	
+	//creates a menu so that it's possible to navigate the app in general
+    function showMenu() {
+        
+        var styling = 'style="margin-left: 7px; padding: 5px; font-size:16px;"';
+        //creates a menu we can see in all pages. Add class=".navbar-fixed-top" to the #menu button, if menu should stick to top of screen instead of sticking to the top of the page.
+        $("#mCont").append('<div class="dropdown" id="menu">\
+        <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="menu" data-toggle="dropdown">\
+        <span id="menuIcon" class="glyphicon glyphicon-th-list"></span></button>\
+        <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu">\
+          <li role="presentation"><a id="bygningerMenu" '+ styling +' role="menuitem" tabindex="-1" href="#">Bygninger</a></li>\
+		  <li role="presentation" class="divider"></li>\
+          <li role="presentation"><a id="geoteknikMenu" '+ styling +' role="menuitem" tabindex="-1" href="#">Geoteknik</a></li>\
+          <li role="presentation" class="divider"></li>\
+          <li role="presentation"><a id="jordMenu" '+ styling +' role="menuitem" tabindex="-1" href="#">Jord</a></li>\
+        </ul>\
+      </div>');
+        
+        //these methods are needed to assign "click" events to the menu buttons...
+        $("#bygningerMenu").on("click", showBygninger);
+        $("#geoteknikMenu").on("click", showGeoteknik);
+        $("#jordMenu").on("click", showJord);
+        
     };
 	
 	//called from phonegapReady, instantiates all the data we'll be using.
