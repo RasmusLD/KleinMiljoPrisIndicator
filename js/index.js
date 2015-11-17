@@ -392,7 +392,7 @@ $(document).ready(function(){
 //Bygninger start
 	
 	//Bygninger > Materiale Prøver
-	var bmpASB = {beskrivelse: "Asbest i materialeprøve -mikroskopi", pris: 460.00, info: "I forbindelse med renovering eller nybyggeri kan det være nødvendigt at undersøge materialer, luft eller jord for asbest. Asbest er en fælles betegnelse for en gruppe af fiberformede silikater.\n\
+	bmpASB = {beskrivelse: "Asbest i materialeprøve -mikroskopi", pris: 460.00, info: "I forbindelse med renovering eller nybyggeri kan det være nødvendigt at undersøge materialer, luft eller jord for asbest. Asbest er en fælles betegnelse for en gruppe af fiberformede silikater.\n\
 \n\
 Asbest typebestemmes og kvantificeres at kvantificere asbest i jord efter metoden: PLM (polariseret lys mikroskopi) på asbestfibre >50 µm, omregning iht Miljøprojekt nr. 1360-2011.\n\
 Der kendes adskillige asbestmineraler, men specielt tre typer har fundet anvendelse:\n\
@@ -418,7 +418,7 @@ PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt 
 	var bmpCHL = {beskrivelse: "Chlorparaffiner (ikke-akkrediteret)", pris: 1092.50, info: "Er der mistanke om Chlorparaffiner udtages en materialeprøve og koncentrationes måles. Prøven er ikke akkrediteret."};
 	
 	//array med info vedr. Materiale Prøver
-	var bygMaterialeProver = [bmpASB, bmpBLY, bmp6MET, bmpFUG, bmpMAL, bmpBET, bmpCHL];
+	bygMaterialeProver = [bmpASB, bmpBLY, bmp6MET, bmpFUG, bmpMAL, bmpBET, bmpCHL];
 	
 	
 	//Bygninger > Indeklima
@@ -462,7 +462,7 @@ PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt 
 	var bygAndreYdelser = [bayIBP, bayART, bayIKA, bayEKA, bayKKM];
 	
 	//Komplet Bygninger objekt
-	var bygningerOBJ = {
+	bygningerOBJ = {
 		MaterialeProver: bygMaterialeProver,
 		Indeklima: bygIndeklima,
 		RadOgSvamp: bygRadOgSvamp,
