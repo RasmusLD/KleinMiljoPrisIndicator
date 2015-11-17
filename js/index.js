@@ -256,7 +256,7 @@ $(document).ready(function(){
 	function testHandleResult() {
 		
 		//the value of the proveType option is the price of the option
-		var price = $("#proveType").val();
+		var price = $("#proveType").options[$("#proveType").selectedIndex].val;
 		$(body).append('<p>price: '+ price +'</p>');
 		//the value of the antalProver is the number of times we want the option performed
 		var number = $("#antalProver").val();
