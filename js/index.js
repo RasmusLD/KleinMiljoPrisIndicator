@@ -92,10 +92,9 @@ $(document).ready(function(){
 		
 		//starts up the "bygninger" option, could start on any of the pages, but we want to start somewhere
 		//a page explaining the app could be called instead.
-		showBygninger();
+		//showBygninger(); OMITTED WHILE TESTING
 		
 		testAccess();
-		//testClean();
 	});
 	
 	//closes the app on pause
@@ -105,17 +104,6 @@ $(document).ready(function(){
         //it is done this way instead of using the exit-on-suspend preference, because that doesn't always work
 		navigator.app.exitApp();
     };
-	
-	//test
-	function testClean() {
-		$(body).empty();
-		
-		setTimeout(function() {
-			$(body).append("<p>testClean success</p>");
-			
-			//$(body).append(<button action="testAccess" class="btn" >testAccess-Button</button>);
-		}, 1);
-	};
 
 //Grouping Start (grouped for convenience, as they do roughly the same things)
 //functions called to show the different options, they are called from the menu and showBygninger is also called initially on start-up
@@ -127,9 +115,21 @@ $(document).ready(function(){
 		setTimeout(function() {
 			
 			//the var we append to body later on in this method
-			var toAppend = '<form id="testProveForm" class="form-group optionGroup" role="form" method="post" action="">';
+			var toAppend = '<form id="proveForm" class="form-group optionGroup" role="form" method="post" action="">';
 			//a string to store all the select options in, so that we can add them all together append them to the form
 			var selectOptions = "";
+			
+	/*
+	det jeg skal bruge er en måde at gå igennem alle muligheder under Bygninger
+	og tilføje dem til listen over valgmuligheder, det samme skal laves under jord og geoteknik...
+	der kan med fordel laves opdelinger, så man kan se når man kigger på MaterialeProver etc,
+	men dette er bonus...
+	
+	Der SKAL tilføjes en listener, så at der altid laves en ekstra dropdown menu,
+	når den gamle er blevet udfyldt...
+	
+	Der SKAL også laves en info knap, der kan vise "info" om det man har valgt...
+	*/
 			
 			//iterate through the options and add the options to the selectOptions string
 			for(var i = 0; i < bygningerOBJ["MaterialeProver"].length; i++) {
