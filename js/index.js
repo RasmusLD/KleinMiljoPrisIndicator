@@ -69,8 +69,11 @@ $(document).ready(function(){
 		//we need this for some relative styling on non iPhones...
         getSize();
         
-        //needed to show the  logo on top of all screens
+        //needed to show the logo on top of all screens
         showLogo();
+		
+		//needed to show the menu on top of all screens
+		showMenu();
 		
 		//shows the contact information on the bottom of all screens
 		showContactInfo();
