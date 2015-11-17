@@ -130,27 +130,12 @@ $(document).ready(function(){
 	
 	Der SKAL også laves en info knap, der kan vise "info" om det man har valgt...
 	*/
-			
-	//swap the 4 for-loops with 1 for-each?
-			//iterate through the options for MaterialeProver and add the options to the selectOptions string
-			for(var i = 0; i < bygningerOBJ["MaterialeProver"].length; i++) {
-				var object = bygningerOBJ["MaterialeProver"][i];
-				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
-			};
-			//iterate through the options for Indeklima and add the options to the selectOptions string
-			for(var i = 0; i < bygningerOBJ["Indeklima"].length; i++) {
-				var object = bygningerOBJ["Indeklima"][i];
-				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
-			};
-			//iterate through the options for RadOgSvamp and add the options to the selectOptions string
-			for(var i = 0; i < bygningerOBJ["RadOgSvamp"].length; i++) {
-				var object = bygningerOBJ["RadOgSvamp"][i];
-				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
-			};
-			//iterate through the options for AndreYdelser and add the options to the selectOptions string
-			for(var i = 0; i < bygningerOBJ["AndreYdelser"].length; i++) {
-				var object = bygningerOBJ["AndreYdelser"][i];
-				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
+			//iterates through all objects in bygningerOBJ and runs a for loop for each one, letting us add all the options that exist
+			for(var optionObject in bygningerOBJ) {
+				for(var i = 0; i < bygningerOBJ[optionObject].length; i++) {
+					var object = bygningerOBJ[optionObject][i];
+					selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
+				};
 			};
 			
 			toAppend +='\
@@ -196,7 +181,18 @@ $(document).ready(function(){
 	
 	//a function to handle the calculation and showing of results.
 	function handleResult() {
-		$(body).append('<p>Pris for prøven: "the total price" kr<p>');
+		
+		//the value of the proveType option is the price of the option
+		var price = $("#proveType").val();
+		
+		//the value of the antalProver is the number of times we want the option performed
+		var number = $("#antalProver").val();
+		
+		//the result of the options
+		var result = parseFloat(price) * parseFloat(number);
+		
+		//append the result to the body, to show our price
+		$(body).append('<h3>Pris for prøven: '+ result +' kr<h3>');
 	};
 	
 	//testing access to data
@@ -279,7 +275,7 @@ $(document).ready(function(){
 		//$(body).append('<p>number: '+ number +'</p>');
 		//the result of the options
 		var result = parseFloat(price) * parseFloat(number);
-		$(body).append('<h2>Pris for prøven: '+ result +' kr<h2>');
+		$(body).append('<h3>Pris for prøven: '+ result +' kr<h3>');
 		
 	};
 	
