@@ -117,7 +117,7 @@ $(document).ready(function(){
 			//the var we append to body later on in this method
 			var toAppend = '<form id="proveForm" class="form-group optionGroup" role="form" method="post" action="">';
 			//a string to store all the select options in, so that we can add them all together append them to the form
-			var selectOptions = "";
+			var selectOptions = '<option value="default" disabled selected >Vælg fra menuen</option>';
 			
 	/*
 	det jeg SKAL bruge er en måde at gå igennem alle muligheder under Bygninger
@@ -125,18 +125,43 @@ $(document).ready(function(){
 	der kan med fordel laves opdelinger, så man kan se når man kigger på MaterialeProver etc,
 	men dette er bonus...
 	
-	Der SKAL tilføjes en listener, så at der altid laves en ekstra dropdown menu,
+	Der SKAL tilføjes en listen'er, så at der altid laves en ekstra dropdown menu,
 	når den gamle er blevet udfyldt...
 	
 	Der SKAL også laves en info knap, der kan vise "info" om det man har valgt...
 	*/
 			
-			//iterate through the options and add the options to the selectOptions string
+	//swap the 4 for-loops with 1 for-each?
+			//iterate through the options for MaterialeProver and add the options to the selectOptions string
 			for(var i = 0; i < bygningerOBJ["MaterialeProver"].length; i++) {
 				var object = bygningerOBJ["MaterialeProver"][i];
 				$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
 				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
 			};
+			//iterate through the options for Indeklima and add the options to the selectOptions string
+			for(var i = 0; i < bygningerOBJ["Indeklima"].length; i++) {
+				var object = bygningerOBJ["Indeklima"][i];
+				$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
+				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
+			};
+			//iterate through the options for RadOgSvamp and add the options to the selectOptions string
+			for(var i = 0; i < bygningerOBJ["RadOgSvamp"].length; i++) {
+				var object = bygningerOBJ["RadOgSvamp"][i];
+				$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
+				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
+			};
+			//iterate through the options for AndreYdelser and add the options to the selectOptions string
+			for(var i = 0; i < bygningerOBJ["AndreYdelser"].length; i++) {
+				var object = bygningerOBJ["AndreYdelser"][i];
+				$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
+				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
+			};
+			
+			'<div class="input-group form-group">\
+				<span class="input-group-addon">'+ 'https://' +'</span>\
+				<input value="" type="url" name="domain" class="form-control" placeholder="adresse">\
+				<span class="input-group-addon">'+ '.nemvagt.dk' +'</span>\
+			</div>'
 			
 			toAppend +='\
 				<select id="proveType" name="proveType" class="form-control">\
@@ -208,7 +233,7 @@ $(document).ready(function(){
 			for(var i = 0; i < bygningerOBJ["MaterialeProver"].length; i++) {
 				//$(body).append('<p>skal til at definerer var object.</p>');
 				var object = bygningerOBJ["MaterialeProver"][i];
-				$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
+				//$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
 				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
 				//$(body).append('<p>alt i loopet er nu gjort, kører måske igen?</p>');
 			};
@@ -216,12 +241,16 @@ $(document).ready(function(){
 			//var data = bygningerOBJ["MaterialeProver"];
 			
 			//$(body).append('<p>skal til at tilføje strukturen til toAppend, inklusiv at proppe selectOptions derind.</p>');
-			toAppend +='\
-				<select id="proveType" name="proveType" class="form-control">\
-					'+ selectOptions +'\
-				</select>\
-				\
-				<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">';
+			toAppend +='<div class="input-group form-group">\
+				<span class="form-control">\
+					<select id="proveType" name="proveType" class="form-control">\
+						'+ selectOptions +'\
+					</select>\
+				</span>\
+				<span class="form-control">\
+					<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">\
+				</span>\
+				</div>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
 			toAppend += '<button id="lavUdregning" type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" action="">Lav udregning</button>';
