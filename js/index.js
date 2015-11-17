@@ -199,30 +199,30 @@ $(document).ready(function(){
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
 			
-			$(body).append('<p>er i timeout\'et hvor formen laves og append\'es formen.</p>');
+			//$(body).append('<p>er i timeout\'et hvor formen laves og append\'es formen.</p>');
 			
 			//the var we append to body later on in this method
 			var toAppend = '<form id="testProveForm" class="form-group optionGroup" role="form" method="post" action="">';
 			//a string to store all the select options in, so that we can add them all together append them to the form
 			var selectOptions = "";
 			
-			$(body).append('<p>skal til at starte for loop\'et som går igennem/tilgår dataen.</p>');
-			$(body).append('<p>'+ bygningerOBJ["MaterialeProver"].length +'</p>');
-			$(body).append('<p>'+ bygningerOBJ["MaterialeProver"][0]["beskrivelse"] +'</p>');
+			//$(body).append('<p>skal til at starte for loop\'et som går igennem/tilgår dataen.</p>');
+			//$(body).append('<p>'+ bygningerOBJ["MaterialeProver"].length +'</p>');
+			//$(body).append('<p>'+ bygningerOBJ["MaterialeProver"][0]["beskrivelse"] +'</p>');
 			
 			//bygningerOBJ["MaterialeProver"][0]["beskrivelse"]
 			
 			for(var i = 0; i < bygningerOBJ["MaterialeProver"].length; i++) {
-				$(body).append('<p>skal til at definerer var object.</p>');
+				//$(body).append('<p>skal til at definerer var object.</p>');
 				var object = bygningerOBJ["MaterialeProver"][i];
-				$(body).append('<p>var object er defineret, skal til at tilføje en mulighed til selectOptions.</p>');
+				//$(body).append('<p>var object er defineret, skal til at tilføje en mulighed til selectOptions.</p>');
 				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
-				$(body).append('<p>alt i loopet er nu gjort, kører måske igen?</p>');
+				//$(body).append('<p>alt i loopet er nu gjort, kører måske igen?</p>');
 			};
 			
 			//var data = bygningerOBJ["MaterialeProver"];
 			
-			$(body).append('<p>skal til at tilføje strukturen til toAppend, inklusiv at proppe selectOptions derind.</p>');
+			//$(body).append('<p>skal til at tilføje strukturen til toAppend, inklusiv at proppe selectOptions derind.</p>');
 			toAppend +='\
 				<select name="proveType" class="form-control">\
 					'+ selectOptions +'\
@@ -235,11 +235,11 @@ $(document).ready(function(){
 			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be //showHandleResult
 			toAppend += '</form>';
 			
-			$(body).append('<p>har lukket form strengen og skal til at tilføje den til body.</p>');
+			//$(body).append('<p>har lukket form strengen og skal til at tilføje den til body.</p>');
 			
 			//appends the data from this method
 			$(body).append(toAppend);
-			$(body).append('<p>har append\'et formen og skal til at lave en listener på knappen.</p>');
+			//$(body).append('<p>har append\'et formen og skal til at lave en listener på knappen.</p>');
 			
 			//setTimeout(function() {
 				$("#lavUdregning").on("click", function(event) {
@@ -248,7 +248,7 @@ $(document).ready(function(){
 				});
 			//}, 1);
 			
-			$(body).append('<p>har lavet en listener og er nu færdig med metoden.</p>');
+			//$(body).append('<p>har lavet en listener og er nu færdig med metoden.</p>');
 			
 		}, 1);
 		
@@ -257,12 +257,13 @@ $(document).ready(function(){
 		
 		//the value of the proveType option is the price of the option
 		var price = $("proveType").val();
+		$(body).append('<p>price: '+ price +'</p>');
 		//the value of the antalProver is the number of times we want the option performed
 		var number = $("antalProver").val();
+		$(body).append('<p>number: '+ number +'</p>');
 		//the result of the options
 		var result = parseFloat(price) * parseFloat(number);
-		
-		$(body).append('<p>'+ result +'kr<p>');
+		$(body).append('<p>Pris for prøven: '+ result +' kr<p>');
 		
 	};
 	
