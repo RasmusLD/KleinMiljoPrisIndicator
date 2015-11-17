@@ -260,7 +260,7 @@ $(document).ready(function(){
 		//the value of the antalProver is the number of times we want the option performed
 		var number = $("antalProver").val();
 		//the result of the options
-		var result = price * number;
+		var result = parseFloat(price) * parseFloat(number);
 		
 		$(body).append('<p>'+ result +'kr<p>');
 		
@@ -378,7 +378,7 @@ $(document).ready(function(){
     };
 	
 	//called from phonegapReady, instantiates all the data we'll be using.
-	//OBS the variables may have to be made global...
+	//OBS the "komplet objekt'er" have to be global, ie. don't call them var; Otherwise you can't reach them.
 	function instantiateData() {
 //objekter / array /info / information; Diverse info vedr. miljøpriser etc
 	
@@ -392,7 +392,7 @@ $(document).ready(function(){
 //Bygninger start
 	
 	//Bygninger > Materiale Prøver
-	bmpASB = {beskrivelse: "Asbest i materialeprøve -mikroskopi", pris: 460.00, info: "I forbindelse med renovering eller nybyggeri kan det være nødvendigt at undersøge materialer, luft eller jord for asbest. Asbest er en fælles betegnelse for en gruppe af fiberformede silikater.\n\
+	var bmpASB = {beskrivelse: "Asbest i materialeprøve -mikroskopi", pris: 460.00, info: "I forbindelse med renovering eller nybyggeri kan det være nødvendigt at undersøge materialer, luft eller jord for asbest. Asbest er en fælles betegnelse for en gruppe af fiberformede silikater.\n\
 \n\
 Asbest typebestemmes og kvantificeres at kvantificere asbest i jord efter metoden: PLM (polariseret lys mikroskopi) på asbestfibre >50 µm, omregning iht Miljøprojekt nr. 1360-2011.\n\
 Der kendes adskillige asbestmineraler, men specielt tre typer har fundet anvendelse:\n\
@@ -418,7 +418,7 @@ PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt 
 	var bmpCHL = {beskrivelse: "Chlorparaffiner (ikke-akkrediteret)", pris: 1092.50, info: "Er der mistanke om Chlorparaffiner udtages en materialeprøve og koncentrationes måles. Prøven er ikke akkrediteret."};
 	
 	//array med info vedr. Materiale Prøver
-	bygMaterialeProver = [bmpASB, bmpBLY, bmp6MET, bmpFUG, bmpMAL, bmpBET, bmpCHL];
+	var bygMaterialeProver = [bmpASB, bmpBLY, bmp6MET, bmpFUG, bmpMAL, bmpBET, bmpCHL];
 	
 	
 	//Bygninger > Indeklima
@@ -505,7 +505,7 @@ PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt 
 	var geoAndreYdelser = [gayAGB, gayKUO];
 	
 	//Komplet Geoteknik objekt
-	var geoteknikOBJ = {
+	geoteknikOBJ = {
 		UndersøgelsestypeUdenBoring: geoUndersogelsestypeUdenBoring,
 		UndersogelsestypeMedBoring: geoUndersogelsestypeMedBoring,
 		AnsvarOgTillegsydelser: geoAnsvarOgTillegsydelser,
@@ -586,7 +586,7 @@ PCB er underlagt grænseværdier for, hvornår PCB-holdigt materiale er farligt 
 	var jorAndreYdelser = [jayIBP, jayART, jayIKT, jayEKT, jayKKM];
 	
 	//Komplet Jord objekt
-	var jordOBJ = {
+	jordOBJ = {
 		Jordprover: jorJordprover,
 		Poreluft: jorPoreluft,
 		Vandprover: jorVandprover,
