@@ -232,7 +232,7 @@ $(document).ready(function(){
 			
 			//$(body).append('<p>skal til at tilføje strukturen til toAppend, inklusiv at proppe selectOptions derind.</p>');
 			toAppend +='<div class="input-group form-group">\
-					<select id="proveType" name="proveType" class="form-control">\
+					<select id="proveType" name="proveType" class="selectClass form-control">\
 						'+ selectOptions +'\
 					</select>\
 					<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">\
@@ -254,6 +254,9 @@ $(document).ready(function(){
 			$("#lavUdregning").on("click", function(event) {
 				event.preventDefault();
 				testHandleResult();
+			});
+			$(".selectClass").on("click", function() {
+				
 			});
 			//handles the onclick events for info buttons
 			//$(".infoBtnClass").on("click", function(event) {
@@ -277,6 +280,33 @@ $(document).ready(function(){
 		//the result of the options
 		var result = parseFloat(price) * parseFloat(number);
 		$(body).append('<h2>Pris for prøven: '+ result +' kr<h2>');
+		
+	};
+	
+	function testMoreOptions() {
+		
+		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
+		setTimeout(function() {
+			
+			var testMoreOptionsVar;
+			var testMoreOptionsOptionString = '';
+			
+			for(var i = 0; i < bygningerOBJ["MaterialeProver"].length; i++) {
+				var testObject = bygningerOBJ["MaterialeProver"][i];
+				testMoreOptionsOptionString += "<option value="+testObject["pris"]+">"+testObject["beskrivelse"]+"</option>";
+			};
+			
+			testMoreOptionsVar +='<div class="input-group form-group">\
+					<select name="proveType" class="selectClass form-control">\
+						'+ testMoreOptionsOptionString +'\
+					</select>\
+					<input type="number" name="antalProver" class="form-control" value="0">\
+					<button type="submit" class="infoBtnClass btn btn-success btn-lg" action=""></button>\
+				</div>';
+			
+			//appends the data from this method
+			$("#testProveForm").append(testMoreOptionsVar);
+		}, 1);
 		
 	};
 	
