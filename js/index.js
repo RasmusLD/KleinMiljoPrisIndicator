@@ -224,7 +224,7 @@ $(document).ready(function(){
 			
 			//$(body).append('<p>skal til at tilføje strukturen til toAppend, inklusiv at proppe selectOptions derind.</p>');
 			toAppend +='\
-				<select name="proveType" class="form-control">\
+				<select id="proveType" name="proveType" class="form-control">\
 					'+ selectOptions +'\
 				</select>\
 				\
@@ -256,7 +256,7 @@ $(document).ready(function(){
 	function testHandleResult() {
 		
 		//the value of the proveType option is the price of the option
-		var price = $("#proveType").options[$("#proveType").selectedIndex].val;
+		var price = $("#proveType").val;
 		$(body).append('<p>price: '+ price +'</p>');
 		//the value of the antalProver is the number of times we want the option performed
 		var number = $("#antalProver").val();
