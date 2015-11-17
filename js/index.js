@@ -120,8 +120,8 @@ $(document).ready(function(){
 			var selectOptions = "";
 			
 	/*
-	det jeg skal bruge er en måde at gå igennem alle muligheder under Bygninger
-	og tilføje dem til listen over valgmuligheder, det samme skal laves under jord og geoteknik...
+	det jeg SKAL bruge er en måde at gå igennem alle muligheder under Bygninger
+	og tilføje dem til listen over valgmuligheder, det samme SKAL laves under jord og geoteknik...
 	der kan med fordel laves opdelinger, så man kan se når man kigger på MaterialeProver etc,
 	men dette er bonus...
 	
