@@ -135,25 +135,21 @@ $(document).ready(function(){
 			//iterate through the options for MaterialeProver and add the options to the selectOptions string
 			for(var i = 0; i < bygningerOBJ["MaterialeProver"].length; i++) {
 				var object = bygningerOBJ["MaterialeProver"][i];
-				$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
 				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
 			};
 			//iterate through the options for Indeklima and add the options to the selectOptions string
 			for(var i = 0; i < bygningerOBJ["Indeklima"].length; i++) {
 				var object = bygningerOBJ["Indeklima"][i];
-				$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
 				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
 			};
 			//iterate through the options for RadOgSvamp and add the options to the selectOptions string
 			for(var i = 0; i < bygningerOBJ["RadOgSvamp"].length; i++) {
 				var object = bygningerOBJ["RadOgSvamp"][i];
-				$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
 				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
 			};
 			//iterate through the options for AndreYdelser and add the options to the selectOptions string
 			for(var i = 0; i < bygningerOBJ["AndreYdelser"].length; i++) {
 				var object = bygningerOBJ["AndreYdelser"][i];
-				$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
 				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
 			};
 			
@@ -240,6 +236,7 @@ $(document).ready(function(){
 						'+ selectOptions +'\
 					</select>\
 					<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">\
+					<button type="submit" class="infoBtnClass btn btn-success btn-lg" action=""></button>\
 				</div>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
@@ -253,12 +250,16 @@ $(document).ready(function(){
 			$(body).append(toAppend);
 			//$(body).append('<p>har append\'et formen og skal til at lave en listener på knappen.</p>');
 			
-			//setTimeout(function() {
-				$("#lavUdregning").on("click", function(event) {
-					event.preventDefault();
-					testHandleResult();
-				});
-			//}, 1);
+			//I seem to not need a timeout, though I'm not sure... Might need it.
+			$("#lavUdregning").on("click", function(event) {
+				event.preventDefault();
+				testHandleResult();
+			});
+			//handles the onclick events for info buttons
+			$(".infoBtnClass").on("click", function(event) {
+				event.preventDefault();
+				$(this).closest(".").
+			});
 			
 			//$(body).append('<p>har lavet en listener og er nu færdig med metoden.</p>');
 			
@@ -275,7 +276,7 @@ $(document).ready(function(){
 		//$(body).append('<p>number: '+ number +'</p>');
 		//the result of the options
 		var result = parseFloat(price) * parseFloat(number);
-		$(body).append('<p>Pris for prøven: '+ result +' kr<p>');
+		$(body).append('<h2>Pris for prøven: '+ result +' kr<h2>');
 		
 	};
 	

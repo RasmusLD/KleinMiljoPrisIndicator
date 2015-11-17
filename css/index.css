@@ -22,7 +22,7 @@
 	font-family: "Verdana", "arial", "serif";
 }
 
-body {
+.app{
 	/*height: 100vh; trouble is, this doesn't resize... Search for: html js resizing body border
 	maybe add in bootstrap or jQuery or try fill-parent or try setting a min-value...*/
 	border-style: solid;
