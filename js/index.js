@@ -215,7 +215,7 @@ $(document).ready(function(){
 			for(var i = 0; i < bygningerOBJ["MaterialeProver"].length; i++) {
 				//$(body).append('<p>skal til at definerer var object.</p>');
 				var object = bygningerOBJ["MaterialeProver"][i];
-				//$(body).append('<p>var object er defineret, skal til at tilføje en mulighed til selectOptions.</p>');
+				$(body).append('<p>objectets pris: '+ object["pris"]+'.</p>');
 				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
 				//$(body).append('<p>alt i loopet er nu gjort, kører måske igen?</p>');
 			};
