@@ -296,12 +296,12 @@ $(document).ready(function(){
 				testMoreOptionsOptionString += "<option value="+testObject["pris"]+">"+testObject["beskrivelse"]+"</option>";
 			};
 			
-			testMoreOptionsVar +='<div class="input-group form-group">\
+			testMoreOptionsVar ='<div class="input-group form-group">\
 					<select name="proveType" class="selectClass form-control">\
 						'+ testMoreOptionsOptionString +'\
 					</select>\
 					<input type="number" name="antalProver" class="form-control" value="0">\
-					<button type="submit" class="infoBtnClass btn btn-success btn-lg" action=""></button>\
+					<button type="submit" class="infoBtnClass btn btn-success btn-lg" action="">info</button>\
 				</div>';
 			
 			//appends the data from this method
