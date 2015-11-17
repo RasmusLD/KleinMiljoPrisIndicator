@@ -157,12 +157,6 @@ $(document).ready(function(){
 				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
 			};
 			
-			'<div class="input-group form-group">\
-				<span class="input-group-addon">'+ 'https://' +'</span>\
-				<input value="" type="url" name="domain" class="form-control" placeholder="adresse">\
-				<span class="input-group-addon">'+ '.nemvagt.dk' +'</span>\
-			</div>'
-			
 			toAppend +='\
 				<select id="proveType" name="proveType" class="form-control">\
 					'+ selectOptions +'\
