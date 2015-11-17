@@ -199,7 +199,7 @@ $(document).ready(function(){
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
 			
-			$(body).append('<p>er i timeout\'et hvor formen laves og append\'es formen</p>');
+			$(body).append('<p>er i timeout\'et hvor formen laves og append\'es formen.</p>');
 			
 			//the var we append to body later on in this method
 			var toAppend = '<form id="testProveForm" class="form-group optionGroup" role="form" method="post" action="">';
@@ -210,14 +210,16 @@ $(document).ready(function(){
 			//bygningerOBJ["MaterialeProver"][0]["beskrivelse"]
 			
 			for(var i = 0; i < bygningerOBJ["MaterialeProver"].length; i++) {
+				$(body).append('<p>skal til at definerer var object.</p>');
 				var object = bygningerOBJ["MaterialeProver"][i];
-				
+				$(body).append('<p>var object er defineret, skal til at tilføje en mulighed til selectOptions.</p>');
 				selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
+				$(body).append('<p>alt i loopet er nu gjort, kører måske igen?</p>');
 			};
 			
 			//var data = bygningerOBJ["MaterialeProver"];
 			
-			
+			$(body).append('<p>skal til at tilføje strukturen til toAppend, inklusiv at proppe selectOptions derind.</p>');
 			toAppend +='\
 				<select name="proveType" class="form-control">\
 					'+ selectOptions +'\
@@ -230,9 +232,11 @@ $(document).ready(function(){
 			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be //showHandleResult
 			toAppend += '</form>';
 			
+			$(body).append('<p>har lukket form strengen og skal til at tilføje den til body.</p>');
+			
 			//appends the data from this method
 			$(body).append(toAppend);
-			$(body).append('<p>har append\'et formen</p>');
+			$(body).append('<p>har append\'et formen og skal til at lave en listener på knappen.</p>');
 			
 			//setTimeout(function() {
 				$("#lavUdregning").on("click", function(event) {
@@ -240,6 +244,8 @@ $(document).ready(function(){
 					testHandleResult();
 				});
 			//}, 1);
+			
+			$(body).append('<p>har lavet en listener og er nu færdig med metoden.</p>');
 			
 		}, 1);
 		
