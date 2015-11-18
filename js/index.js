@@ -230,7 +230,7 @@ $(document).ready(function(){
 				<select id="proveType" name="proveType" class="optionsClass form-control">\
 					'+ selectOptions +'\
 				</select>\
-				<label for="antalProver">Vælg antal</label>\
+				<span class="input-group-addon" ><label for="antalProver">Vælg antal</label></span>\
 				<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">';
 			
 			//adds a submit button
