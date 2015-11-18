@@ -69,9 +69,6 @@ $(document).ready(function(){
 		//we need this for some relative styling on non iPhones...
         getSize();
 		
-		//just used to push the contact information towards the bottom of the screen
-		bodyMinHeigth();
-        
         //needed to show the logo on top of all screens
         showLogo();
 		
@@ -401,17 +398,6 @@ $(document).ready(function(){
 	//insert the contact information for Klein-Miljø on the bottom of all pages.
 	function showContactInfo() {
 		$("#cCont").append('<p>Klein-Miljø - Telefon: +45 20856292 - Kontor: Titmosevej 1, 4200 Slagelse - Filial: Gl. Køge Landevej 55, 3., 2500 Valby - E-mail: info@geologiskraadgivning.dk</p>');
-	};
-	
-	//set the min-height of the bCont(essentially our body)
-	function bodyMinHeigth() {
-		var tempOffset = 0;
-		if($(window).width() > $(window).height()) {
-			tempOffset = ($(window).width()/100)*60;
-		}else {
-            tempOffset = ($(window).height()/100)*60;
-        };
-		//body.style.minHeight = tempOffset +'px';
 	};
 	
 	//used above to know if we need to handle a backBtn, but also to determine how to style certain elements... this is done because certain older windows and apple phone will have trouble with styling compatability...
