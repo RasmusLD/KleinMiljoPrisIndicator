@@ -480,7 +480,7 @@ $(document).ready(function(){
         
         var styling = 'style="margin-left: 7px; padding: 5px; font-size:16px;"';
         //creates a menu we can see in all pages. Add class=".navbar-fixed-top" to the #menu div, if menu should stick to top of screen instead of sticking to the top of the page.
-        $("#mCont").append('<div class="dropdown pull-right navbar-fixed-top" id="menu">\
+        $("#mCont").append('<div style="float: right;" class="dropdown navbar-fixed-top" id="menu">\
         <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">\
         <span id="menuIcon" class="glyphicon glyphicon-th-list"></span></button>\
         <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu">\
