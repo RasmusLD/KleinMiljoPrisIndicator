@@ -22,12 +22,16 @@
 	font-family: "Verdana", "arial", "serif";
 }
 
-.app{
+.app {
 	/*height: 100vh; trouble is, this doesn't resize... Search for: html js resizing body border
 	maybe add in bootstrap or jQuery or try fill-parent or try setting a min-value...*/
 	border-style: none;
 	border-width: 5px;
 	border-color: rgb(146,208,80);
+}
+
+.optionsClass {
+	margin-bottom: 3px;
 }
 
 #lCont {

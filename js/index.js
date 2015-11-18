@@ -121,17 +121,13 @@ $(document).ready(function(){
 			var selectOptions = '<option value="default" disabled selected >Vælg fra menuen</option>';
 			
 	/*
-	det jeg SKAL bruge er en måde at gå igennem alle muligheder under Bygninger
-	og tilføje dem til listen over valgmuligheder, det samme SKAL laves under jord og geoteknik...
-	der kan evt. laves opdelinger, så man kan se når man kigger på MaterialeProver etc
-	
-	Der SKAL tilføjes en listen'er, så at der altid laves en ekstra dropdown menu,
+	-Der SKAL tilføjes en listen'er, så at der altid laves en ekstra dropdown menu,
 	når den gamle er blevet udfyldt... (noget allá, .selectKLasse -> onDeselect -> repeat the "4 loops")
 	Dette er ikke umiddelbart understøttet og vil blive mere komplekst end som så...
-	Et andet problem, som dog er relateret til det ovenstående er at der skal matches priser/selects
+	-Et andet problem, som dog er relateret til det ovenstående er at der skal matches priser/selects
 	med deres respektive valgte antal
 	
-	Der SKAL også laves en info knap, der kan vise "info" om det man har valgt...
+	-Der SKAL også laves en info knap, der kan vise "info" om det man har valgt...
 	Jeg er pt. usikker på hvordan jeg bedst er 100% sikker på at det altid er den rigtige info jeg vælger
 	en mulighed er at give alt data (det har det måske allerede, som kan tilgås) et unikt id og sætte value
 	til dette, og så iterere igennem for-each loop'et og finde hvor id'et matcher, for så at tage den data jeg skal bruge...
@@ -145,11 +141,11 @@ $(document).ready(function(){
 			};
 			
 			toAppend +='\
-				<select id="proveType" name="proveType" class="form-control">\
+				<select id="proveType" name="proveType" class="optionsClass form-control">\
 					'+ selectOptions +'\
 				</select>\
 				\
-				<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">';
+				<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">';
 			
 			//adds a submit button
 			toAppend += '<button id="lavUdregning" type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" action="">Lav udregning</button>';
@@ -188,11 +184,11 @@ $(document).ready(function(){
 			};
 			
 			toAppend +='\
-				<select id="proveType" name="proveType" class="form-control">\
+				<select id="proveType" name="proveType" class="optionsClass form-control">\
 					'+ selectOptions +'\
 				</select>\
 				\
-				<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">';
+				<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">';
 			
 			//adds a submit button
 			toAppend += '<button id="lavUdregning" type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" action="">Lav udregning</button>';
@@ -231,11 +227,11 @@ $(document).ready(function(){
 			};
 			
 			toAppend +='\
-				<select id="proveType" name="proveType" class="form-control">\
+				<select id="proveType" name="proveType" class="optionsClass form-control">\
 					'+ selectOptions +'\
 				</select>\
 				\
-				<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">';
+				<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">';
 			
 			//adds a submit button
 			toAppend += '<button id="lavUdregning" type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" action="">Lav udregning</button>';
@@ -305,11 +301,13 @@ $(document).ready(function(){
 			
 			//$(body).append('<p>skal til at tilføje strukturen til toAppend, inklusiv at proppe selectOptions derind.</p>');
 			toAppend +='<div class="input-group form-group">\
-					<select id="proveType" name="proveType" class="selectClass form-control">\
+					<select id="proveType" name="proveType" class="optionsClass selectClass form-control">\
 						'+ selectOptions +'\
 					</select>\
-					<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">\
-					<button disabled type="submit" class="infoBtnClass btn btn-success btn-lg" action="">More options</button>\
+					<span class="input-group-addon">\
+						<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">\
+					</span>\
+					<button disabled type="submit" class="infoBtnClass btn btn-sm" action="">More options</button>\
 				</div>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
