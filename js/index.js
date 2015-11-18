@@ -145,7 +145,7 @@ $(document).ready(function(){
 					'+ selectOptions +'\
 				</select>\
 				<div class="input-group form-group">\
-					<span class="input-group-addon" ><label for="antalProver">Vælg antal</label></span>\
+					<span class="input-group-addon" >Vælg antal</span>\
 					<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">\
 				</div>';
 			
@@ -190,7 +190,7 @@ $(document).ready(function(){
 					'+ selectOptions +'\
 				</select>\
 				<div class="input-group form-group">\
-					<span class="input-group-addon" ><label for="antalProver">Vælg antal</label></span>\
+					<span class="input-group-addon" >Vælg antal</span>\
 					<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">\
 				</div>';
 			
@@ -235,7 +235,7 @@ $(document).ready(function(){
 					'+ selectOptions +'\
 				</select>\
 				<div class="input-group form-group">\
-					<span class="input-group-addon" ><label for="antalProver">Vælg antal</label></span>\
+					<span class="input-group-addon" >Vælg antal</span>\
 					<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">\
 				</div>';
 			
@@ -274,7 +274,8 @@ $(document).ready(function(){
 	};
 	
 //TESTING GROUP START
-	//testing access to data
+	
+	//testing access to data and page setup
 	function testAccess() {
 		
 		$(body).empty();
