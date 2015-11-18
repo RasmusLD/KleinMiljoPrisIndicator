@@ -145,15 +145,15 @@ $(document).ready(function(){
 				\
 				<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">';
 			
-			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
+			//adds a submit button
 			toAppend += '<button id="lavUdregning" type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" action="">Lav udregning</button>';
-			//closes the UserProfile form, done here outside the "for loop", since we don't know how long the form will be //showHandleResult
+			//closes the form
 			toAppend += '</form>';
 			
-			//appends the data from this method
+			//appends the form to the body
 			$(body).append(toAppend);
 			
-			//an onclick listener, that targets the form's button and overrides the default event
+			//an onclick listener, that targets the form's submit button and overrides the default event
 			$("#lavUdregning").on("click", function(event) {
 				event.preventDefault();
 				handleResult();
@@ -167,6 +167,41 @@ $(document).ready(function(){
 		
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
+			
+			//the var we append to body later on in this method
+			var toAppend = '<form id="proveForm" class="form-group optionGroup" role="form" method="post" action="">';
+			//a string to store all the select options in, so that we can add them all together append them to the form
+			var selectOptions = '<option value="default" disabled selected >Vælg fra menuen</option>';
+			
+			//iterates through all objects in geoteknikOBJ and runs a for loop for each one, letting us add all the options that exist
+			for(var optionObject in geoteknikOBJ) {
+				for(var i = 0; i < geoteknikOBJ[optionObject].length; i++) {
+					var object = geoteknikOBJ[optionObject][i];
+					selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
+				};
+			};
+			
+			toAppend +='\
+				<select id="proveType" name="proveType" class="form-control">\
+					'+ selectOptions +'\
+				</select>\
+				\
+				<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">';
+			
+			//adds a submit button
+			toAppend += '<button id="lavUdregning" type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" action="">Lav udregning</button>';
+			//closes the form
+			toAppend += '</form>';
+			
+			//appends the form to the body
+			$(body).append(toAppend);
+			
+			//an onclick listener, that targets the form's submit button and overrides the default event
+			$("#lavUdregning").on("click", function(event) {
+				event.preventDefault();
+				handleResult();
+			});
+			
 		}, 1);
 	};
 	function showJord() {
@@ -175,6 +210,41 @@ $(document).ready(function(){
 		
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
 		setTimeout(function() {
+			
+			//the var we append to body later on in this method
+			var toAppend = '<form id="proveForm" class="form-group optionGroup" role="form" method="post" action="">';
+			//a string to store all the select options in, so that we can add them all together append them to the form
+			var selectOptions = '<option value="default" disabled selected >Vælg fra menuen</option>';
+			
+			//iterates through all objects in jordOBJ and runs a for loop for each one, letting us add all the options that exist
+			for(var optionObject in jordOBJ) {
+				for(var i = 0; i < jordOBJ[optionObject].length; i++) {
+					var object = jordOBJ[optionObject][i];
+					selectOptions += "<option value="+object["pris"]+">"+object["beskrivelse"]+"</option>";
+				};
+			};
+			
+			toAppend +='\
+				<select id="proveType" name="proveType" class="form-control">\
+					'+ selectOptions +'\
+				</select>\
+				\
+				<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">';
+			
+			//adds a submit button
+			toAppend += '<button id="lavUdregning" type="submit" style="margin-top: 5px; margin-bottom: 5px;" class="btn btn-success btn-lg" action="">Lav udregning</button>';
+			//closes the form
+			toAppend += '</form>';
+			
+			//appends the form to the body
+			$(body).append(toAppend);
+			
+			//an onclick listener, that targets the form's submit button and overrides the default event
+			$("#lavUdregning").on("click", function(event) {
+				event.preventDefault();
+				handleResult();
+			});
+			
 		}, 1);
 	};
 //Grouping End
