@@ -23,6 +23,7 @@
 }
 
 body {
+	min-height: 100vmax;
 	height: 100%;
 }
 
