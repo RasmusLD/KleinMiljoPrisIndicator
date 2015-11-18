@@ -68,6 +68,9 @@ $(document).ready(function(){
 		
 		//we need this for some relative styling on non iPhones...
         getSize();
+		
+		//just used to push the contact information towards the bottom of the screen
+		bodyMinHeigth();
         
         //needed to show the logo on top of all screens
         showLogo();
@@ -404,9 +407,9 @@ $(document).ready(function(){
 	function bodyMinHeigth() {
 		var tempOffset = 0;
 		if($(window).width() > $(window).height()) {
-			tempOffset = ($(window).width()/100)*70;
+			tempOffset = ($(window).width()/100)*60;
 		}else {
-            tempOffset = ($(window).height()/100)*70;
+            tempOffset = ($(window).height()/100)*60;
         };
 		body.style.minHeight = tempOffset +'px';
 	};
