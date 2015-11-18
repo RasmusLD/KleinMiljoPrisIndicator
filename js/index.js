@@ -87,7 +87,8 @@ $(document).ready(function(){
             //document.addEventListener("backbutton", onBackKeyDown, false);
         //};
 		
-		//instantiates var body, that will be used on every page.
+		//instantiates var body to the dom element "#bCont", personal preference, but can't be changed without fixing it in the code multiple places.
+		//doing it this way means it's not strictly necessary to write $(body), you can just use body
 		body = $("#bCont");
 		
 		//starts up the "bygninger" option, could start on any of the pages, but we want to start somewhere
@@ -122,13 +123,18 @@ $(document).ready(function(){
 	/*
 	det jeg SKAL bruge er en måde at gå igennem alle muligheder under Bygninger
 	og tilføje dem til listen over valgmuligheder, det samme SKAL laves under jord og geoteknik...
-	der kan med fordel laves opdelinger, så man kan se når man kigger på MaterialeProver etc,
-	men dette er bonus...
+	der kan evt. laves opdelinger, så man kan se når man kigger på MaterialeProver etc
 	
 	Der SKAL tilføjes en listen'er, så at der altid laves en ekstra dropdown menu,
 	når den gamle er blevet udfyldt... (noget allá, .selectKLasse -> onDeselect -> repeat the "4 loops")
+	Dette er ikke umiddelbart understøttet og vil blive mere komplekst end som så...
+	Et andet problem, som dog er relateret til det ovenstående er at der skal matches priser/selects
+	med deres respektive valgte antal
 	
 	Der SKAL også laves en info knap, der kan vise "info" om det man har valgt...
+	Jeg er pt. usikker på hvordan jeg bedst er 100% sikker på at det altid er den rigtige info jeg vælger
+	en mulighed er at give alt data (det har det måske allerede, som kan tilgås) et unikt id og sætte value
+	til dette, og så iterere igennem for-each loop'et og finde hvor id'et matcher, for så at tage den data jeg skal bruge...
 	*/
 			//iterates through all objects in bygningerOBJ and runs a for loop for each one, letting us add all the options that exist
 			for(var optionObject in bygningerOBJ) {
@@ -265,6 +271,7 @@ $(document).ready(function(){
 		$(body).append('<h3>Pris for prøven: '+ result +' kr<h3>');
 	};
 	
+//TESTING GROUP START
 	//testing access to data
 	function testAccess() {
 		
@@ -302,7 +309,7 @@ $(document).ready(function(){
 						'+ selectOptions +'\
 					</select>\
 					<input id="antalProver" type="number" name="antalProver" class="form-control" value="0">\
-					<button type="submit" class="infoBtnClass btn btn-success btn-lg" action=""></button>\
+					<button disabled type="submit" class="infoBtnClass btn btn-success btn-lg" action="">More options</button>\
 				</div>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
@@ -348,7 +355,6 @@ $(document).ready(function(){
 		$(body).append('<h3>Pris for prøven: '+ result +' kr<h3>');
 		
 	};
-	
 	function testMoreOptions() {
 		
 		//timeout is set to circumvent the inherent stack/dom/layer issues of JS
@@ -375,6 +381,7 @@ $(document).ready(function(){
 		}, 1);
 		
 	};
+//TESTING GROUP END
 	
 	//inserts the "Klein-Miljø" logo in top of all pages.
 	function showLogo() {
