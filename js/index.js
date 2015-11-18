@@ -122,10 +122,12 @@ $(document).ready(function(){
 			
 	/*
 	-Der SKAL tilføjes en listen'er, så at der altid laves en ekstra dropdown menu,
-	når den gamle er blevet udfyldt... (noget allá, .selectKLasse -> onDeselect -> repeat the "4 loops")
-	Dette er ikke umiddelbart understøttet og vil blive mere komplekst end som så...
+	når den gamle er blevet udfyldt... (noget allá, .selectKLasse -> onDeselect -> repeat the "for-each loop")
+	Dette er ikke umiddelbart understøttet og vil blive mere komplekst end som så... (onDeselect functionaliteten
+	findes tilsyneladende ikke, man er altså nødt til selv at bygge den, f.eks. ved at lave en listener på alt
+	andet end den .dropdown, og så fjerne listeneren fra andre dropdowns når man laver en ny. )
 	-Et andet problem, som dog er relateret til det ovenstående er at der skal matches priser/selects
-	med deres respektive valgte antal
+	med deres respektive valgte antal, så man kan få en samlet pris
 	
 	-Der SKAL også laves en info knap, der kan vise "info" om det man har valgt...
 	Jeg er pt. usikker på hvordan jeg bedst er 100% sikker på at det altid er den rigtige info jeg vælger
@@ -398,6 +400,17 @@ $(document).ready(function(){
 		$("#cCont").append('<p>Klein-Miljø - Telefon: +45 20856292 - Kontor: Titmosevej 1, 4200 Slagelse - Filial: Gl. Køge Landevej 55, 3., 2500 Valby - E-mail: info@geologiskraadgivning.dk</p>');
 	};
 	
+	//set the min-height of the bCont(essentially our body)
+	function bodyMinHeigth() {
+		var tempOffset = 0;
+		if($(window).width() > $(window).height()) {
+			tempOffset = ($(window).width()/100)*70;
+		}else {
+            tempOffset = ($(window).height()/100)*70;
+        };
+		body.style.minHeight = tempOffset +'px';
+	};
+	
 	//used above to know if we need to handle a backBtn, but also to determine how to style certain elements... this is done because certain older windows and apple phone will have trouble with styling compatability...
     function isiPhone() {
         if(device.platform === "iPhone") {
@@ -481,6 +494,7 @@ $(document).ready(function(){
         var styling = 'style="margin-left: 7px; padding: 5px; font-size:16px;"';
         //creates a menu we can see in all pages. Add class=".navbar-fixed-top" to the #menu div, if menu should stick to top of screen instead of sticking to the top of the page.
 		//be aware that using navbar-fixed-top will make the position absolute (you can't use float)
+		//also if absolute the navbar might be in the same space as the logo on smaller screens
         $("#mCont").append('<div class="dropdown" id="menu">\
         <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">\
         <span id="menuIcon" class="glyphicon glyphicon-th-list"></span></button>\
