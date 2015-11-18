@@ -411,7 +411,7 @@ $(document).ready(function(){
 		}else {
             tempOffset = ($(window).height()/100)*60;
         };
-		body.style.minHeight = tempOffset +'px';
+		//body.style.minHeight = tempOffset +'px';
 	};
 	
 	//used above to know if we need to handle a backBtn, but also to determine how to style certain elements... this is done because certain older windows and apple phone will have trouble with styling compatability...
