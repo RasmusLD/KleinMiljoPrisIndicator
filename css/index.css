@@ -24,8 +24,9 @@
 
 .app {
 	height: 100%;
-	border-style: none;/*trouble is, if we want a visible border, this doesn't resize...
+	border-style: solid;/*trouble is, if we want a visible border, this doesn't resize...
 	Search for: html js resizing body border maybe add in bootstrap or jQuery or try fill-parent or try setting a min-value...*/
+	padding: 3px;
 	border-width: 5px;
 	border-color: rgb(146,208,80);
 }
