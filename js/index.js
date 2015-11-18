@@ -290,7 +290,7 @@ $(document).ready(function(){
 			//the var we append to body later on in this method
 			var toAppend = '<form id="testProveForm" class="form-group optionGroup" role="form" method="post" action="">';
 			//a string to store all the select options in, so that we can add them all together append them to the form
-			var selectOptions = "";
+			var selectOptions = '<option value="default" disabled selected >Vælg fra menuen</option>';
 			
 			//$(body).append('<p>skal til at starte for loop\'et som går igennem/tilgår dataen.</p>');
 			//$(body).append('<p>'+ bygningerOBJ["MaterialeProver"].length +'</p>');
@@ -310,13 +310,28 @@ $(document).ready(function(){
 			
 			//$(body).append('<p>skal til at tilføje strukturen til toAppend, inklusiv at proppe selectOptions derind.</p>');
 			toAppend +='<div class="input-group form-group">\
-					<select id="proveType" name="proveType" class="optionsClass selectClass form-control">\
+					<select name="proveType" class="optionsClass selectClass form-control">\
 						'+ selectOptions +'\
 					</select>\
-					<span class="input-group-addon">\
-						<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="1">\
-					</span>\
-					<button disabled type="submit" class="infoBtnClass btn btn-sm" action="">More options</button>\
+					<div class="input-group form-group">\
+						<span class="input-group-addon" >Vælg antal</span>\
+						<input type="number" name="antalProver" class="optionsClass numberClass form-control" value="1">\
+					</div>\
+					<select name="proveType" class="optionsClass selectClass form-control">\
+						'+ selectOptions +'\
+					</select>\
+					<div class="input-group form-group">\
+						<span class="input-group-addon" >Vælg antal</span>\
+						<input type="number" name="antalProver" class="optionsClass numberClass form-control" value="1">\
+					</div>\
+					<select name="proveType" class="optionsClass selectClass form-control">\
+						'+ selectOptions +'\
+					</select>\
+					<div class="input-group form-group">\
+						<span class="input-group-addon" >Vælg antal</span>\
+						<input type="number" name="antalProver" class="optionsClass numberClass form-control" value="1">\
+					</div>\
+					<button hidden disabled type="submit" class="infoBtnClass btn btn-sm" action="">More options</button>\
 				</div>';
 			
 			//adds a submit button to the UserProfile form, done outside the "for loop" it will always be at the end of the form
@@ -330,14 +345,11 @@ $(document).ready(function(){
 			$(body).append(toAppend);
 			//$(body).append('<p>har append\'et formen og skal til at lave en listener på knappen.</p>');
 			
-			//I seem to not need a timeout, though I'm not sure... Might need it.
 			$("#lavUdregning").on("click", function(event) {
 				event.preventDefault();
 				testHandleResult();
 			});
-			$(".selectClass").on("click", function() {
-				
-			});
+			
 			//handles the onclick events for info buttons
 			//$(".infoBtnClass").on("click", function(event) {
 				//event.preventDefault();
@@ -350,15 +362,26 @@ $(document).ready(function(){
 		
 	};
 	function testHandleResult() {
+		var price = 0;
+		var number = 0;
+		var result = 0;
 		
+		var selectElements = $(".selectClass");
+		for(var option in selectElements) {
+			if(option.val() !== "default") {
+				price = option.val();
+				number = option.closest(".numberClass").val();
+				result += parseFloat(price) * parseFloat(number);
+			};
+		};
 		//the value of the proveType option is the price of the option
-		var price = $("#proveType").val();
+		//var price = $("#proveType").val();
 		//$(body).append('<p>price: '+ price +'</p>');
 		//the value of the antalProver is the number of times we want the option performed
-		var number = $("#antalProver").val();
+		//var number = $("#antalProver").val();
 		//$(body).append('<p>number: '+ number +'</p>');
 		//the result of the options
-		var result = parseFloat(price) * parseFloat(number);
+		//var result = parseFloat(price) * parseFloat(number);
 		$(body).append('<h3>Pris for prøven: '+ result +' kr<h3>');
 		
 	};
