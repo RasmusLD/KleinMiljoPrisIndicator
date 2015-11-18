@@ -146,7 +146,7 @@ $(document).ready(function(){
 				</select>\
 				<div class="input-group form-group">\
 					<span class="input-group-addon" >Vælg antal</span>\
-					<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">\
+					<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="1">\
 				</div>';
 			
 			//adds a submit button
@@ -191,7 +191,7 @@ $(document).ready(function(){
 				</select>\
 				<div class="input-group form-group">\
 					<span class="input-group-addon" >Vælg antal</span>\
-					<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">\
+					<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="1">\
 				</div>';
 			
 			//adds a submit button
@@ -236,7 +236,7 @@ $(document).ready(function(){
 				</select>\
 				<div class="input-group form-group">\
 					<span class="input-group-addon" >Vælg antal</span>\
-					<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">\
+					<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="1">\
 				</div>';
 			
 			//adds a submit button
@@ -312,7 +312,7 @@ $(document).ready(function(){
 						'+ selectOptions +'\
 					</select>\
 					<span class="input-group-addon">\
-						<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="0">\
+						<input id="antalProver" type="number" name="antalProver" class="optionsClass form-control" value="1">\
 					</span>\
 					<button disabled type="submit" class="infoBtnClass btn btn-sm" action="">More options</button>\
 				</div>';
