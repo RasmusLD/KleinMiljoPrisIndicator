@@ -22,13 +22,9 @@
 	font-family: "Verdana", "arial", "serif";
 }
 
-html, body {
-	min-height: 100vh;
-}
-
 .app {
 	height: 100%;
-	border-style: solid;/*trouble is, if we want a visible border, then we need to set a minimum size
+	border-style: none;/*trouble is, if we want a visible border, then we need to set a minimum size
 	and have it resize...*/
 	padding: 3px;
 	border-width: 5px;
